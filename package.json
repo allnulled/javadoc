@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "node test/javadoc.spec.js",
-    "docs": "node bin/javadoc.cli.js -i \"docs/README.ini.md\" \"bin/javadoc.cli.js\" \"docs/README.end.md\" \"src/javadoc.js\" -f markdown -o README.md"
+    "docs": "node bin/javadoc.cli.js -i \"docs/README.ini.md\" \"bin/javadoc.cli.js\" \"src/javadoc.js\" \"docs/README.end.md\" -f markdown -o README.md"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,27 @@
   },
   "devDependencies": {
     "assertivity": "^1.0.3"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allnulled/javadoc.git"
+  },
+  "keywords": [
+    "javadoc",
+    "json",
+    "markdown",
+    "glob",
+    "cli",
+    "api",
+    "documentation",
+    "comments"
+  ],
+  "bugs": {
+    "url": "https://github.com/allnulled/javadoc/issues"
+  },
+  "homepage": "https://github.com/allnulled/javadoc#readme"
 }

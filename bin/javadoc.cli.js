@@ -4,7 +4,7 @@
  *
  * #### 3.1. CLI Reference
  *
- * *Note:* is you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
+ * If you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
  *
  *
  *
@@ -14,12 +14,12 @@
  * 
  * ```
  * Options:
- *   --help         Show help                                             [boolean]
- *   --version      Show version number                                   [boolean]
- *   --include, -i  Include a new glob pattern (as input)     [array] [default: []]
- *   --exclude, -e  Exclude a new glob pattern (as input)     [array] [default: []]
- *   --format, -f   Format of the output. Options: 'markdown' | 'json'.    [string]
- *   --output, -o   File to output the generated contents.                 [string]
+ *  --help         Show help                                                                  [boolean]
+ *  --version      Show version number                                                        [boolean]
+ *  --include, -i  Include a new glob pattern (as input).               [array] [default: ["** /*.js"]]
+ *  --exclude, -e  Exclude a new glob pattern (as input). [array] [default: ["** /node_modules/** /*"]]
+ *  --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
+ *  --output, -o   File to output the generated contents.                                      [string]
  * ```
  */
 const args = require("yargs")

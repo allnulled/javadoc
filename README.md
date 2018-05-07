@@ -117,7 +117,7 @@ The `javadoc` tool is available as `CLI` and as `API`.
 
 #### 3.1. CLI Reference
 
-*Note:* is you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
+If you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
 
 
 
@@ -130,30 +130,19 @@ The `javadoc` tool is available as `CLI` and as `API`.
 
 ```
 Options:
-  --help         Show help                                             [boolean]
-  --version      Show version number                                   [boolean]
-  --include, -i  Include a new glob pattern (as input)     [array] [default: []]
-  --exclude, -e  Exclude a new glob pattern (as input)     [array] [default: []]
-  --format, -f   Format of the output. Options: 'markdown' | 'json'.    [string]
-  --output, -o   File to output the generated contents.                 [string]
+ --help         Show help                                                                  [boolean]
+ --version      Show version number                                                        [boolean]
+ --include, -i  Include a new glob pattern (as input).               [array] [default: ["** /*.js"]]
+ --exclude, -e  Exclude a new glob pattern (as input). [array] [default: ["** /node_modules/** /*"]]
+ --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
+ --output, -o   File to output the generated contents.                                      [string]
 ```
 
 
 
  
 
-
-## 4. Conclusion
-
-Simple but useful tool that aims to simplify the task of maintaining the documentation of your projects.
-
-
-
-
-
- 
-
-#### 3.1. API Reference
+#### 3.2. API Reference
 
 
 
@@ -208,6 +197,17 @@ Then, it will retrieve the Javadoc comments found in them.
 Then, it will format the results (as JSON or Markdown).
 
 And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
+
+
+
+
+ 
+
+
+## 4. Conclusion
+
+Simple but useful tool that aims to simplify the task of maintaining the documentation of your projects.
+
 
 
 
