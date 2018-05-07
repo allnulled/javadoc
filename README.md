@@ -3,7 +3,7 @@
 # javadoc
 
 
-![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-not%20yet-yellow.svg) ![](https://img.shields.io/badge/coverage-none%25-yellow.svg)
+![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-not%20yet-red.svg) ![](https://img.shields.io/badge/coverage-none%25-red.svg)
 
 
 Simple tool to generate JSON or Markdown text from Javadoc comments.
