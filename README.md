@@ -28,13 +28,13 @@ Or the same:
 
 The above examples will:
 
-1. Include any JavaScript and TypeScript files found under our current directory.
+- Include any JavaScript and TypeScript files found under our current directory.
 
-2. Exclude the NPM and Bower modules typical folders.
+- Exclude the NPM and Bower modules typical folders.
 
-3. Format the results into a JSON file.
+- Format the results into a JSON file.
 
-4. Create a file at `docs/docs.json` and dump into it the results. Take into account that if the folder is not created (and the same with all the middle folders we specify), the tool will create it for us too.
+- Create a file at `docs/docs.json` and dump into it the results. Take into account that if the folder is not created (and the same with all the middle folders we specify), the tool will create it for us too.
 
 
 ##### Example 2: in Markdown format
@@ -43,9 +43,6 @@ If we wanted to have the same previous example, but to output a `README.md` Mark
 
 ~$ `javadoc --include "**/*.js" "**/*.ts" --exclude "**/node_modules/**" "**/bower_components/**" --output "README.md" --format "markdown"`
 
-
-
-*Tip:* when I want to document my code, what I do is to create 2 files: `docs/README.ini.md` and `docs/README.end.md`, and I add them in the included files, one the first, and the other the last, and as the tool will recollect the Javadoc comments in the same order we specified, I can output the results in Markdown format, into my `README.md` final file. This way, I only have to maintain 1 documentation: the one that is in the comments of my code. It simplifies a lot the documentation task for me.
 
 
 ##### Example 3: output to console
@@ -215,4 +212,3 @@ And finally, it will write the results into the specified file (output), or if w
 
 
 
-# Read this file

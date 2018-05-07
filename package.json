@@ -1,0 +1,23 @@
+{
+  "name": "javadoc",
+  "version": "1.0.0",
+  "description": "Tool to generate JSON or Markdown from Javadoc comments and using glob patterns, for CLI and API.",
+  "main": "src/javadoc.js",
+  "bin": {
+    "javadoc": "bin/javadoc.cli.js"
+  },
+  "scripts": {
+    "test": "node test/javadoc.spec.js",
+    "docs": "node bin/javadoc.cli.js -i \"docs/README.ini.md\" \"bin/javadoc.cli.js\" \"docs/README.end.md\" \"src/javadoc.js\" -f markdown -o README.md"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "globule": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "assertivity": "^1.0.3"
+  }
+}
