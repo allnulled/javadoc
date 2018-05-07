@@ -7,6 +7,7 @@
     "javadoc": "bin/javadoc.cli.js"
   },
   "scripts": {
+    "gitupload": "gitanoaddfiles bin/javadoc.cli.js  docs/README.* package* README.md  src/javadoc.js  test/* test/examples/* && gitanopush",
     "test": "node test/javadoc.spec.js",
     "docs": "node bin/javadoc.cli.js -i \"docs/README.ini.md\" \"bin/javadoc.cli.js\" \"src/javadoc.js\" \"docs/README.end.md\" -f markdown -o README.md"
   },
@@ -18,7 +19,8 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "assertivity": "^1.0.3"
+    "assertivity": "^1.0.3",
+    "execute-command-sync": "^1.0.2"
   },
   "directories": {
     "doc": "docs",
