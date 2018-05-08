@@ -204,14 +204,10 @@ If you set any value for any of these properties, that property will be override
 
 **Returns:** `{String}` Depending on the format, it will output a JSON or a Markdown text.
 
-**Description:** This method will take the files we want to include, the files we want to exclude, the file into which dump the results, and the format we want for them (`'json'` or `'markdown'`).
-
-Then, it will retrieve the files matched (included) and not excluded.
-
-Then, it will retrieve the Javadoc comments found in them.
-
-Then, it will format the results (as JSON or Markdown).
-
+**Description:** This method will take the files we want to include, the files we want to exclude, the file into which dump the results, and the format we want for them (`'json'` or `'markdown'`). 
+Then, it will retrieve the files matched (included) and not excluded. 
+Then, it will retrieve the Javadoc comments found in them. 
+Then, it will format the results (as JSON or Markdown). 
 And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
 
 
