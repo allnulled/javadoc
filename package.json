@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "assertivity": "^1.0.3",
-    "execute-command-sync": "^1.0.2"
+    "execute-command-sync": "^1.0.2",
+    "nyc": "^11.7.1"
   },
   "directories": {
     "doc": "docs",

@@ -60,7 +60,9 @@ module.exports = {
 								if (isNew || (obj[prop].length === 0)) {
 										obj[prop].push("");
 								}
-								obj[prop][obj[prop].length - 1] += item.replace(/^ /g, "");
+								obj[prop][obj[prop].length - 1] += item.replace(/^ /g, "").replace(/(\*)( )+(\/)/g, function(match) {
+										return match.substr(0, 1) + match.substr(1, match.length - 3) + match.substr(match.length - 1);
+								});
 						};
 						var javadocComments = text.match(REGEX_JAVADOC);
 						var javadocFileData = [];
@@ -171,8 +173,8 @@ module.exports = {
 										for (var b = 0; b < properties.length; b++) {
 												var property = properties[b];
 												var prop = property.replace(/^\@/g, "");
-												if(prop.length)
-													prop = prop[0].toUpperCase() + prop.substr(1);
+												if (prop.length)
+														prop = prop[0].toUpperCase() + prop.substr(1);
 												var content = comment[property];
 												if (prop !== "Default") {
 														data += `**${prop}:**`;

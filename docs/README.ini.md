@@ -9,25 +9,46 @@
  *
  * ## 1. Installation
  *
- * ~$ `npm install -s javadoc`
+ * `~$ npm install -s javadoc`
  * 
- * If you want the CLI tool easily available, install it globally:
+ * To use the CLI anywhere, install it globally:
  *
- * ~$ `npm install -g javadoc`
+ * `~$ npm install -g javadoc`
  * 
  *
  * ## 2. Usage
  * 
  * #### 2.1. Usage of the CLI:
  *
+ * The CLI tool accepts 4 parameters, which by default value:
+ *
+ * ```bash
+ *    --include "**/*.js"
+ *    --exclude "**/node_modules/**"
+ *    --output (omitted, undefined)
+ *    --format "json"
+ * ```
+ *
+ *
  * ##### Example 1: in JSON format
  *
- * ~$ `javadoc --include "**/*.js" "**/*.ts" --exclude "**/node_modules/**" "**/bower_components/**" --output "docs/docs.json" --format "json"`
+ * ```bash
+ * ~$ javadoc 
+ *     --include "**/*.js" "**/*.ts" 
+ *     --exclude "**/node_modules/**" "**/bower_components/**" 
+ *     --output "docs/docs.json" 
+ *     --format "json"
+ * ```
  * 
  * Or the same:
  * 
- * ~$ `javadoc -i "**/*.js" "**/*.ts" -e "**/node_modules/**" "**/bower_components/**" -o "docs/docs.json" -f "json"`
- *
+ * ```bash
+ * ~$ javadoc 
+ *     -i "**/*.js" "**/*.ts" 
+ *     -e "**/node_modules/**" "**/bower_components/**" 
+ *     -o "docs/docs.json" 
+ *     -f "json"
+ * ```
  *
  * The above examples will:
  * 
@@ -42,9 +63,15 @@
  *
  * ##### Example 2: in Markdown format
  *
- * If we wanted to have the same previous example, but to output a `README.md` Markdown file, we can:
+ * If we wanted to have the same previous example, but to output a `README.md` Markdown file, we can (in one line):
  *
- * ~$ `javadoc --include "**/*.js" "**/*.ts" --exclude "**/node_modules/**" "**/bower_components/**" --output "README.md" --format "markdown"`
+ * ```bash
+ * ~$ javadoc 
+ *     --include "**/*.js" "**/*.ts" 
+ *     --exclude "**/node_modules/**" "**/bower_components/**" 
+ *     --output "README.md" 
+ *     --format "markdown"
+ * ```
  *
  *
  *
@@ -52,11 +79,18 @@
  *
  * To output the results by console, you only need to omit the `--output` (or `-o`) parameter.
  *
- * ~$ `javadoc`
+ * `~$ javadoc`
+ * 
+ * Which would be the same as typing:
+ * 
+ * ```bash
+ * ~$ javadoc
+ *    --include "**/*.js"
+ *    --exclude "**/node_modules/**"
+ *    --format "json"
+ * ```
  *
- * As the default value for the `include` is `["**/*.js"]`, the `exclude` is `["**/node_modules/**"]`, and the `output` is `undefined`, this command will try to find all the JavaScript files under the current directory, will avoid NPM modules typical folder, and will print the results by console, in JSON format.
- *
- * To output the results by console, we only need to omit the value for the `output` parameter.
+ * Omitting the `output` parameter implies to print the results by console instead of dumping them into a file. 
  *
  *
  * #### 2.2. Usage of the API:
@@ -75,7 +109,7 @@
  *   include: ["**/*.js", "**/*.ts"],
  *   exclude: ["**/node_modules/**", "**/bower_components/**"],
  *   output: "docs/docs.json",
- *   format: "json",
+ *   format: "json"
  * });
  * ```
  *
@@ -87,29 +121,13 @@
  *   include: ["**/*.js", "**/*.ts"],
  *   exclude: ["**/node_modules/**", "**/bower_components/**"],
  *   output: "README.md",
- *   format: "markdown",
+ *   format: "markdown"
  * });
  * ```
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
  *
  * ## 3. Reference
  *
  * The `javadoc` tool is available as `CLI` and as `API`.
- *
- *
- *
  *
  *
  */
