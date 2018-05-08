@@ -2,6 +2,13 @@ var report = require("assertivity").report;
 var exec = require("execute-command-sync");
 var javadoc = require("../src/javadoc.js");
 
+var data = javadoc.generate({
+		include: [__dirname + "/examples/**/*.js"],
+		format: "json"
+});
+
+
+
 // @TEST: API > include parameter works
 // @TEST: API > exclude parameter works
 // @TEST: API > output parameter works
