@@ -167,6 +167,9 @@ Options:
 
 **Description:** This object holds the whole API of this module, which has only 1 method.
 
+----
+
+
 
 
  
