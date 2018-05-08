@@ -21,16 +21,6 @@ To use the CLI anywhere, install it globally:
 
 #### 2.1. Usage of the CLI:
 
-The CLI tool accepts 4 parameters, which by default value:
-
-```bash
-   --include "**/*.js"
-   --exclude "**/node_modules/**"
-   --output (omitted, undefined)
-   --format "json"
-```
-
-
 ##### Example 1: in JSON format
 
 ```bash
@@ -126,25 +116,9 @@ require("javadoc").generate({
 });
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 3. Reference
 
 The `javadoc` tool is available as `CLI` and as `API`.
-
-
-
 
 
 
@@ -170,8 +144,8 @@ If you have installed the tool only locally (and not globaly), you can reproduce
 Options:
  --help         Show help                                                                  [boolean]
  --version      Show version number                                                        [boolean]
- --include, -i  Include a new glob pattern (as input).               [array] [default: ["** /*.js"]]
- --exclude, -e  Exclude a new glob pattern (as input). [array] [default: ["** /node_modules/** /*"]]
+ --include, -i  Include a new glob pattern (as input).               [array] [default: ["**/*.js"]]
+ --exclude, -e  Exclude a new glob pattern (as input). [array] [default: ["**/node_modules/**/*"]]
  --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
  --output, -o   File to output the generated contents.                                      [string]
 ```
@@ -206,8 +180,8 @@ Options:
 
 ```js
 {
-  include: ["** /*.js"], // will pick all the files ended with *.js under the current path.
-  exclude: ["** /node_modules/** /*"], // will exclude any 'node_modules' folder.
+  include: ["**/*.js"], // will pick all the files ended with *.js under the current path.
+  exclude: ["**/node_modules/**/*"], // will exclude any 'node_modules' folder.
   output: undefined, // will print the output by console, instead of dumping it into a file
   format: "json" // will format the output as a JSON object.
 }

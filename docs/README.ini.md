@@ -20,16 +20,6 @@
  * 
  * #### 2.1. Usage of the CLI:
  *
- * The CLI tool accepts 4 parameters, which by default value:
- *
- * ```bash
- *    --include "**/*.js"
- *    --exclude "**/node_modules/**"
- *    --output (omitted, undefined)
- *    --format "json"
- * ```
- *
- *
  * ##### Example 1: in JSON format
  *
  * ```bash
