@@ -1,0 +1,1 @@
+No javadoc here, in order to increase branch coverage.
