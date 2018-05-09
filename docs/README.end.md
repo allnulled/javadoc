@@ -21,7 +21,7 @@
  * The coverage reporting will appear under the folder `coverage`. Open the `index.html` file with a browser.
  *
  *
- * ## 4. Conclusion
+ * ## 5. Conclusion
  *
  * Simple but useful tool that aims to simplify the task of maintaining the documentation of your projects.
  *
