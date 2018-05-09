@@ -120,7 +120,8 @@ report.as("Markdown format > tag names and values are correct (8)").that(javadoc
 };`);
 report.as("Markdown format > Generated comments also return the data generated").that(data2).is.like(javadoc2);
 //consoleLog(consoleLogged);
-report.as("Output > Works by console too").that(consoleLogged).has(' \n\n\n**Lots:** /* This is a multiline comment test */\nthings\nto\n\nsay\n\n\n\n\n \n\n\n\n**Intercalado:** ok,ok,ok,ok,ok,ok\n\n```js\nvar a = {\n  b: {\n    c: {\n      d: "e"\n    }\n  }\n};\n```\n\n\n**Attr:** Attribute\n\n**Code:** This block must have indentation\n\n**Description:** Something else\n\nBut multiline too.\n\n\n**Returns:** Returns\n\n**Param:** Parameter one,Parameter two,Parameter three\n\n**Name:** Name\n\n\n\n');
+report.as("Output > Works by console too").that(consoleLogged).has(' \n\n\n**Lots:** /* This is a multiline comment test */\nthings\nto\n\nsay\n\n\n\n\n \n\n\n\n**Param:** Parameter one,Parameter two,Parameter three\n\n**Intercalado:** ok,ok,ok,ok,ok,ok\n\n```js\nvar a = {\n  b: {\n    c: {\n      d: "e"\n    }\n  }\n};\n```\n\n\n**Name:** Name\n\n**Attr:** Attribute\n\n**Returns:** Returns\n\n**Code:** This block must have indentation\n\n**Description:** Something else\n\nBut multiline too.\n\n\n\n\n');
+// consoleLog(consoleLogged);
 console.log = consoleNolog;
 exec(`node bin/javadoc.cli.js --include "${testFiles.sample}" -f "markdown" > "${testFiles.javadoc3}"`, {
 	cwd: path.resolve(__dirname + "/..")
@@ -132,7 +133,10 @@ console.log = consoleLog;
 // @TEST: CLI > format parameter works
 // @TEST: CLI > without parameters it also works
 var javadoc3 = fs.readFileSync(testFiles.javadoc3).toString().replace(/\n$/g, "");
+//consoleLog("DATA3", data3, "JAVADOC3", javadoc3, "JAVADOC3END");
+// consoleLog("data3", data3.length);
+// consoleLog("javadoc3", javadoc3.length);
 report.as("CLI seems to work fine too, as it outputs the same as the programmatic API").that(data3).is.like(javadoc3);
-fs.unlinkSync(__dirname + "/tmp-javadoc-1.json");
-fs.unlinkSync(__dirname + "/tmp-javadoc-2.md");
-fs.unlinkSync(__dirname + "/tmp-javadoc-3.md");
+// fs.unlinkSync(__dirname + "/tmp-javadoc-1.json");
+// fs.unlinkSync(__dirname + "/tmp-javadoc-2.md");
+//fs.unlinkSync(__dirname + "/tmp-javadoc-3.md");

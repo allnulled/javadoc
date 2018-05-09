@@ -56,10 +56,10 @@ module.exports = {
 		 * 
 		 * ```js
 		 * javadoc.generate({
-		 *   include: ["** /*.js"],
-		 *   exclude: ["**node_modules**"],
-		 * 	 output: undefined,
-		 *   format: "json"
+		 *    include: ["** /*.js"],
+		 *    exclude: ["**node_modules**"],
+		 *    output: undefined,
+		 *    format: "json"
 		 * });
 		 * ```
 		 * -------------------
@@ -157,7 +157,6 @@ module.exports = {
 										for (var a = 0; a < docCommentsFile.length; a++) {
 												var comment = docCommentsFile[a];
 												var properties = Object.keys(comment);
-												console.log(properties);
 												for (var b = 0; b < properties.length; b++) {
 														var property = properties[b];
 														var prop = property.replace(/^\@/g, "");
