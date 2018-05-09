@@ -3,7 +3,9 @@
 # javadoc
 
 
-![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-100%25-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) ![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
+![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-passing-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) 
+
+![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
 
 
 Simple tool to generate JSON or Markdown text from Javadoc comments.
@@ -237,7 +239,7 @@ The test reporting will appear by console.
 The coverage reporting will appear under the folder `coverage`. Open the `index.html` file with a browser.
 
 
-## 4. Conclusion
+## 5. Conclusion
 
 Simple but useful tool that aims to simplify the task of maintaining the documentation of your projects.
 
