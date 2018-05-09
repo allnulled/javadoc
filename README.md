@@ -3,7 +3,7 @@
 # javadoc
 
 
-![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-100%20yet-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) ![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
+![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-100%25-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) ![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
 
 
 Simple tool to generate JSON or Markdown text from Javadoc comments.
@@ -214,6 +214,27 @@ If you set any value for any of these properties, that property will be override
 
 
  
+
+
+## 4. Run tests
+
+To generate the coverage and see the tests by console:
+
+##### 1. Go to the directory of the module:
+
+`~$ cd node_modules/javadoc`
+
+##### 2. Install the dependencies of the module:
+
+`~$ npm run install`
+
+##### 3. Run the tests:
+
+`~$ npm run test`
+
+The test reporting will appear by console.
+
+The coverage reporting will appear under the folder `coverage`. Open the `index.html` file with a browser.
 
 
 ## 4. Conclusion
