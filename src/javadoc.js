@@ -3,14 +3,21 @@
  *
  * 
  *
- *
- * ----
+ * 
+ * -------------------
  *
  * @name `{javadoc}`
  * @type `{Object}`
  * @description This object holds the whole API of this module, which has only 1 method.
  * 
- * ----
+ * @example 
+ * 
+ * ```js
+ * var javadoc = require("javadoc");
+ * ```
+ * 
+ * -------------------
+ * 
  * 
  */
 module.exports = {
@@ -44,6 +51,18 @@ module.exports = {
 		 * Then, it will retrieve the Javadoc comments found in them. 
 		 * Then, it will format the results (as JSON or Markdown). 
 		 * And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
+		 * 
+		 * @example
+		 * 
+		 * ```js
+		 * javadoc.generate({
+		 *   include: ["** /*.js"],
+		 *   exclude: ["**node_modules**"],
+		 * 	 output: undefined,
+		 *   format: "json"
+		 * });
+		 * ```
+		 * -------------------
 		 * 
 		 */
 		generate: function generate(optionsArg) {
@@ -131,16 +150,6 @@ module.exports = {
 						var data = undefined;
 						if (options.format === "markdown") {
 								data = "";
-								var labelsOrder = [
-										"@name",
-										"@type",
-										"@parameter",
-										"@params",
-										"@param",
-										"@return",
-										"@returns",
-										"@description"
-								];
 								for (var file in docComments) {
 										// data += "----\n\n";
 										// data += `##### File: ${file}\n\n`;
@@ -148,74 +157,64 @@ module.exports = {
 										for (var a = 0; a < docCommentsFile.length; a++) {
 												var comment = docCommentsFile[a];
 												var properties = Object.keys(comment);
-												properties = properties.sort(function(a, b) {
-														var orderA = labelsOrder.indexOf(a);
-														var orderB = labelsOrder.indexOf(b);
-														if (orderA === -1) {
-																orderA = properties.length + 2;
-														}
-														if (orderB === -1) {
-																orderB = properties.length + 2;
-														}
-														return orderB - orderA;
-												});
+												console.log(properties);
 												for (var b = 0; b < properties.length; b++) {
 														var property = properties[b];
 														var prop = property.replace(/^\@/g, "");
-												if (prop.length) {
-														prop = prop[0].toUpperCase() + prop.substr(1);
+														if (prop.length) {
+																prop = prop[0].toUpperCase() + prop.substr(1);
+														}
+														var content = comment[property];
+														if (prop !== "Default") {
+																data += `**${prop}:**`;
+														}
+														data += ` ${content}\n\n`;
 												}
-												var content = comment[property];
-												if (prop !== "Default") {
-														data += `**${prop}:**`;
-												}
-												data += ` ${content}\n\n`;
+												data += "\n\n";
 										}
-										data += "\n\n";
+								}
+						} else {
+								data = JSON.stringify(docComments, null, 4);
+						}
+						if (options.output === undefined) {
+								console.log(data);
+						} else {
+								__LOG__("Writing results to: " + options.output);
+								fs.writeFileSync(options.output, data, "utf8");
+						}
+						return data;
+				};
+
+				function extractComments() {
+						const globule = require("globule");
+						const mkdirp = require('mkdirp');
+						const fs = require("fs");
+						var docComments = {};
+						__LOG__("Starting.");
+						__LOG__("Options:", options.include);
+						__LOG__("Excluded:", options.exclude);
+						__LOG__("Output:", options.output);
+						__LOG__("Format:", options.format);
+						// const path = require("path");
+						const files = globule.find([].concat(options.include).concat(options.exclude));
+						__LOG__("Files found: " + files.length);
+						for (var a = 0; a < files.length; a++) {
+								var file = files[a];
+								var contents = fs.readFileSync(file).toString();
+								var javadocMatches = extractJavadocData(contents);
+								__LOG__("Matches in file " + file + ": " + javadocMatches.length);
+								if (javadocMatches.length !== 0) {
+										docComments[file] = javadocMatches;
 								}
 						}
-				} else {
-						data = JSON.stringify(docComments, null, 4);
-				}
-				if (options.output === undefined) {
-						console.log(data);
-				} else {
-						__LOG__("Writing results to: " + options.output);
-						fs.writeFileSync(options.output, data, "utf8");
-				}
-				return data;
-		};
+						return docComments;
+				};
 
-		function extractComments() {
-				const globule = require("globule");
-				const mkdirp = require('mkdirp');
-				const fs = require("fs");
-				var docComments = {};
-				__LOG__("Starting.");
-				__LOG__("Options:", options.include);
-				__LOG__("Excluded:", options.exclude);
-				__LOG__("Output:", options.output);
-				__LOG__("Format:", options.format);
-				// const path = require("path");
-				const files = globule.find([].concat(options.include).concat(options.exclude));
-				__LOG__("Files found: " + files.length);
-				for (var a = 0; a < files.length; a++) {
-						var file = files[a];
-						var contents = fs.readFileSync(file).toString();
-						var javadocMatches = extractJavadocData(contents);
-						__LOG__("Matches in file " + file + ": " + javadocMatches.length);
-						if (javadocMatches.length !== 0) {
-								docComments[file] = javadocMatches;
-						}
-				}
-				return docComments;
-		};
-
-		return (function() {
-				normalizeOptions();
-				var comments = extractComments();
-				var data = formatData(comments);
-				return data;
-		})();
-}
+				return (function() {
+						normalizeOptions();
+						var comments = extractComments();
+						var data = formatData(comments);
+						return data;
+				})();
+		}
 };

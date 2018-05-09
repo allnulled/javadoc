@@ -10,7 +10,7 @@
  *
  * @name `{javadoc CLI}`
  * @type `{Help}`
- * @help
+ * @help 
  * 
  * ```
  * Options:

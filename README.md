@@ -5,7 +5,7 @@
 
 ![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-passing-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) 
 
-![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
+![](https://img.shields.io/badge/full--coverage-yes-green.svg)
 
 
 Simple tool to generate JSON or Markdown text from Javadoc comments.
@@ -136,6 +136,10 @@ If you have installed the tool only locally (and not globaly), you can reproduce
 
 
 
+**Name:** `{javadoc CLI}`
+
+**Type:** `{Help}`
+
 **Help:** 
 
 ```
@@ -148,15 +152,6 @@ Options:
  --output, -o   File to output the generated contents.                                      [string]
 ```
 
-**Type:** `{Help}`
-
-**Name:** `{javadoc CLI}`
-
-
-
-**Description:** This object holds the whole API of this module, which has only 1 method.
-
-----
 
 
  
@@ -166,26 +161,34 @@ Options:
 
 
 
-----
+-------------------
 
+
+**Name:** `{javadoc}`
 
 **Type:** `{Object}`
 
-**Name:** `{javadoc}`
+**Description:** This object holds the whole API of this module, which has only 1 method.
+
+
+**Example:** 
+
+```js
+var javadoc = require("javadoc");
+```
+
+-------------------
+
+
 
 
 
  
 
 
-**Description:** This method will take the files we want to include, the files we want to exclude, the file into which dump the results, and the format we want for them (`'json'` or `'markdown'`). 
-Then, it will retrieve the files matched (included) and not excluded. 
-Then, it will retrieve the Javadoc comments found in them. 
-Then, it will format the results (as JSON or Markdown). 
-And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
+**Name:** `{javadoc}.generate(Object:options)`
 
-
-**Returns:** `{String}` Depending on the format, it will output a JSON or a Markdown text.
+**Type:** `{Function}`
 
 **Parameter:** `{Object} options`. By default, its value is:
 
@@ -209,9 +212,27 @@ If you set any value for any of these properties, that property will be override
   - `format`: `{String}` it indicates the desired format of the output. Options: `'json'` (default) | `'markdown'`
 
 
-**Type:** `{Function}`
+**Returns:** `{String}` Depending on the format, it will output a JSON or a Markdown text.
 
-**Name:** `{javadoc}.generate(Object:options)`
+**Description:** This method will take the files we want to include, the files we want to exclude, the file into which dump the results, and the format we want for them (`'json'` or `'markdown'`). 
+Then, it will retrieve the files matched (included) and not excluded. 
+Then, it will retrieve the Javadoc comments found in them. 
+Then, it will format the results (as JSON or Markdown). 
+And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
+
+
+**Example:** 
+
+```js
+javadoc.generate({
+  include: ["**/*.js"],
+  exclude: ["**node_modules**"],
+	 output: undefined,
+  format: "json"
+});
+```
+-------------------
+
 
 
 
