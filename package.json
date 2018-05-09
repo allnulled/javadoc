@@ -14,15 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "globule": "^1.2.0",
-    "mkdirp": "^0.5.1",
-    "yargs": "^11.0.0"
+    "globule": "1.2.0",
+    "mkdirp": "0.5.1",
+    "yargs": "11.0.0"
   },
   "devDependencies": {
-    "assertivity": "^1.0.3",
-    "execute-command-sync": "^1.0.2",
-    "nyc": "^11.7.1",
-    "rimraf": "^2.6.2"
+    "assertivity": "1.0.3",
+    "execute-command-sync": "1.0.2",
+    "nyc": "11.7.2",
+    "rimraf": "2.6.2"
   },
   "directories": {
     "doc": "docs",
@@ -40,7 +40,12 @@
     "cli",
     "api",
     "documentation",
-    "comments"
+    "comment",
+    "comments",
+    "generate",
+    "reference",
+    "document",
+    "tags"
   ],
   "bugs": {
     "url": "https://github.com/allnulled/javadoc/issues"
