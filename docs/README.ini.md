@@ -2,7 +2,9 @@
  * # javadoc
  *
  * 
- * ![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-100%25-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) ![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
+ * ![](https://img.shields.io/badge/javadoc-v1.0.0-green.svg) ![](https://img.shields.io/badge/tests-passing-green.svg) ![](https://img.shields.io/badge/statements--coverage-100%25-green.svg) ![](https://img.shields.io/badge/branches--coverage-100%25-green.svg) ![](https://img.shields.io/badge/functions--coverage-100%25-green.svg) ![](https://img.shields.io/badge/lines--coverage-100%25-green.svg) 
+ * 
+ * ![](https://img.shields.io/badge/full--coverage-100%25-green.svg)
  * 
  * 
  * Simple tool to generate JSON or Markdown text from Javadoc comments.
