@@ -3,6 +3,7 @@ var exec = require("execute-command-sync");
 var javadoc = require("../src/javadoc.js");
 var fs = require("fs");
 var path = require("path");
+var rimraf = require("rimraf");
 var equals = require("assert").deepEqual;
 var testFiles = {
 		examplesPattern: __dirname + "/examples/**/*.js",
@@ -12,9 +13,10 @@ var testFiles = {
 		sample3: __dirname + "/examples/sample-3.js",
 		sample4: __dirname + "/examples/sample-4.js",
 		sample5: __dirname + "/examples/sample-5.js",
-		javadoc1: __dirname + "/tmp-javadoc-1.json",
-		javadoc2: __dirname + "/tmp-javadoc-2.md",
-		javadoc3: __dirname + "/tmp-javadoc-3.md",
+		outputs: __dirname + "/outputs",
+		javadoc1: __dirname + "/outputs/tmp-javadoc-1.json",
+		javadoc2: __dirname + "/outputs/tmp-javadoc-2.md",
+		javadoc3: __dirname + "/outputs/tmp-javadoc-3.md",
 };
 var consoleLog = console.log;
 var consoleLogged = [];
@@ -137,6 +139,4 @@ var javadoc3 = fs.readFileSync(testFiles.javadoc3).toString().replace(/\n$/g, ""
 // consoleLog("data3", data3.length);
 // consoleLog("javadoc3", javadoc3.length);
 report.as("CLI seems to work fine too, as it outputs the same as the programmatic API").that(data3).is.like(javadoc3);
-// fs.unlinkSync(__dirname + "/tmp-javadoc-1.json");
-// fs.unlinkSync(__dirname + "/tmp-javadoc-2.md");
-//fs.unlinkSync(__dirname + "/tmp-javadoc-3.md");
+rimraf.sync(testFiles.outputs);

@@ -162,6 +162,7 @@ module.exports = {
 				function formatData(docComments) {
 						const fs = require("fs");
 						const path = require("path");
+						const mkdirp = require('mkdirp');
 						var data = undefined;
 						if (options.format === "markdown") {
 								data = "";
@@ -214,7 +215,6 @@ module.exports = {
 
 				function extractComments() {
 						const globule = require("globule");
-						const mkdirp = require('mkdirp');
 						const fs = require("fs");
 						var docComments = {};
 						__LOG__("Starting.");
