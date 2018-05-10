@@ -2,12 +2,13 @@
  * #### 3.2. API Reference
  *
  * 
- *
+ * 
  * 
  * -------------------
  *
- * @name `{javadoc}`
- * @type `{Object}`
+ * ### **`javadoc`**
+ * 
+ * @type *`{Object}`*
  * @description This object holds the whole API of this module, which has only 1 method.
  * 
  * @example 
@@ -22,8 +23,8 @@
  */
 module.exports = {
 		/**
-		 * @name `{javadoc}.generate(Object:options)`
-		 * @type `{Function}`
+		 * ### **`javadoc.generate(options)`**
+		 * @type *`{Function}`*
 		 * @parameter `{Object} options`. By default, its value is:
 		 * 
 		 * ```js
@@ -63,6 +64,19 @@ module.exports = {
 		 * });
 		 * ```
 		 * -------------------
+		 * 
+		 * 
+		 * 
+		 * #### 3.3. Special notes about Markdown format
+		 * 
+		 * As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments (`/**` ... `* /`),
+		 * we need to know a few things.
+		 * 
+		 * 	1. All the lines in the Javadoc comments must start with "*".
+		 * 
+		 *  2. 
+		 * 
+		 * 
 		 * 
 		 */
 		generate: function generate(optionsArg) {
@@ -147,6 +161,7 @@ module.exports = {
 
 				function formatData(docComments) {
 						const fs = require("fs");
+						const path = require("path");
 						var data = undefined;
 						if (options.format === "markdown") {
 								data = "";
@@ -179,7 +194,20 @@ module.exports = {
 								console.log(data);
 						} else {
 								__LOG__("Writing results to: " + options.output);
-								fs.writeFileSync(options.output, data, "utf8");
+								var folder = path.dirname(options.output);
+								if (fs.existsSync(folder)) {
+										if (fs.lstatSync(folder).isDirectory()) {
+												fs.writeFileSync(options.output, data, "utf8");
+										} else {
+												throw {
+														name: "DumpingResultsError",
+														message: "Destiny folder is already a file"
+												};
+										}
+								} else {
+										mkdirp.sync(folder);
+										fs.writeFileSync(options.output, data, "utf8");
+								}
 						}
 						return data;
 				};
@@ -194,7 +222,6 @@ module.exports = {
 						__LOG__("Excluded:", options.exclude);
 						__LOG__("Output:", options.output);
 						__LOG__("Format:", options.format);
-						// const path = require("path");
 						const files = globule.find([].concat(options.include).concat(options.exclude));
 						__LOG__("Files found: " + files.length);
 						for (var a = 0; a < files.length; a++) {

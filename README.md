@@ -131,14 +131,13 @@ The `javadoc` tool is available as `CLI` and as `API`.
 
 #### 3.1. CLI Reference
 
+
+
+
+### **`javadoc CLI`**
+
 If you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
 
-
-
-
-**Name:** `{javadoc CLI}`
-
-**Type:** `{Help}`
 
 **Help:** 
 
@@ -154,6 +153,10 @@ Options:
 
 
 
+
+
+
+
  
 
 #### 3.2. API Reference
@@ -163,10 +166,10 @@ Options:
 
 -------------------
 
+### **`javadoc`**
 
-**Name:** `{javadoc}`
 
-**Type:** `{Object}`
+**Type:** *`{Object}`*
 
 **Description:** This object holds the whole API of this module, which has only 1 method.
 
@@ -185,10 +188,9 @@ var javadoc = require("javadoc");
 
  
 
+### **`javadoc.generate(options)`**
 
-**Name:** `{javadoc}.generate(Object:options)`
-
-**Type:** `{Function}`
+**Type:** *`{Function}`*
 
 **Parameter:** `{Object} options`. By default, its value is:
 
@@ -232,6 +234,19 @@ javadoc.generate({
 });
 ```
 -------------------
+
+
+
+#### 3.3. Special notes about Markdown format
+
+As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments (`/**` ... `*/`),
+we need to know a few things.
+
+	1. All the lines in the Javadoc comments must start with "*".
+
+ 2. 
+
+
 
 
 

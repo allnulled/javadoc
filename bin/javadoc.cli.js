@@ -4,12 +4,13 @@
  *
  * #### 3.1. CLI Reference
  *
+ *
+ *
+ *
+ * ### **`javadoc CLI`**
+ * 
  * If you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
- *
- *
- *
- * @name `{javadoc CLI}`
- * @type `{Help}`
+ * 
  * @help 
  * 
  * ```
@@ -21,6 +22,10 @@
  *  --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
  *  --output, -o   File to output the generated contents.                                      [string]
  * ```
+ * 
+ * 
+ * 
+ * 
  */
 const args = require("yargs")
 	.version("1.0.1")
