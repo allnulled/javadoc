@@ -1,0 +1,170 @@
+{
+    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-1.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n\nThis is on the 'default' property."
+            },
+            {
+                "name": "@param",
+                "text": "Parameter one"
+            },
+            {
+                "name": "@param",
+                "text": "Parameter two"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok"
+            },
+            {
+                "name": "@name",
+                "text": "Name"
+            },
+            {
+                "name": "@attr",
+                "text": "Attribute"
+            },
+            {
+                "name": "@param",
+                "text": "Parameter three"
+            },
+            {
+                "name": "@returns",
+                "text": "Returns"
+            },
+            {
+                "name": "@code",
+                "text": "This block must have indentation\n\n```js\nvar a = {\n b: {\n   c: {\n     d: \"e\"\n   }\n }\n};\n```\n"
+            },
+            {
+                "name": "@description",
+                "text": "Something else\n\nBut multiline too."
+            },
+            {
+                "name": "@",
+                "text": ""
+            }
+        ],
+        [
+            {
+                "name": "default",
+                "text": "\n\nAnother comment."
+            },
+            {
+                "name": "@another",
+                "text": "tag"
+            }
+        ]
+    ],
+    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-2.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n\n\nThe text of the examples is also important.\n\nI hope the things come to better state.\nIn any case.\n"
+            }
+        ]
+    ],
+    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-3.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n\n"
+            },
+            {
+                "name": "@Something",
+                "text": "Ok"
+            },
+            {
+                "name": "@SomethingElse",
+                "text": "Ok\n"
+            }
+        ]
+    ],
+    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-4.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n"
+            },
+            {
+                "name": "@file",
+                "text": "sample-4.js\n\n"
+            }
+        ]
+    ],
+    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n"
+            },
+            {
+                "name": "@Lots",
+                "text": "/* This is a multiline comment test */\nthings\nto\n\nsay\n"
+            }
+        ],
+        [
+            {
+                "name": "default",
+                "text": "\n\n"
+            },
+            {
+                "name": "@param",
+                "text": "Parameter one"
+            },
+            {
+                "name": "@param",
+                "text": "Parameter two"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok"
+            },
+            {
+                "name": "@name",
+                "text": "Name"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok"
+            },
+            {
+                "name": "@attr",
+                "text": "Attribute"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok"
+            },
+            {
+                "name": "@param",
+                "text": "Parameter three"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok"
+            },
+            {
+                "name": "@returns",
+                "text": "Returns"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok"
+            },
+            {
+                "name": "@code",
+                "text": "This block must have indentation"
+            },
+            {
+                "name": "@intercalado",
+                "text": "ok\n\n```js\nvar a = {\n b: {\n   c: {\n     d: \"e\"\n   }\n }\n};\n```\n"
+            },
+            {
+                "name": "@description",
+                "text": "Something else\n\nBut multiline too.\n"
+            }
+        ]
+    ]
+}

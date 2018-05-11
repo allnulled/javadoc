@@ -8,7 +8,8 @@
   },
   "scripts": {
     "gitupload": "gitanoaddfiles bin/javadoc.cli.js  docs/README.* package* README.md  src/javadoc.js  test/* test/examples/* && gitanopush",
-    "test": "node_modules/.bin/rimraf coverage .nyc_output && node_modules/.bin/nyc --reporter=html node test/javadoc.spec.js",
+    "test": "node test/javadoc.spec.js",
+    "coverage": "node_modules/.bin/rimraf coverage .nyc_output && node_modules/.bin/nyc --reporter=html node test/javadoc.spec.js",
     "docs": "node bin/javadoc.cli.js -i \"docs/README.ini.md\" \"bin/javadoc.cli.js\" \"src/javadoc.js\" \"docs/README.end.md\" -f markdown -o README.md"
   },
   "author": "",

@@ -1,29 +1,62 @@
 /**
- * #### 3.2. API Reference
+ * ## 3. API usage
  *
  * 
+ * #### 3.1. API examples
  * 
- * 
- * -------------------
  *
- * ### **`javadoc`**
- * 
- * @type *`{Object}`*
- * @description This object holds the whole API of this module, which has only 1 method.
- * 
- * @example 
- * 
+ * ##### Example 1: in JSON format
+ *
+ *
  * ```js
- * var javadoc = require("javadoc");
+ * require("javadoc").generate({
+ *   include: ["** /*.js", "** /*.ts"],
+ *   exclude: ["** /node_modules/**", "** /bower_components/**"],
+ *   output: "docs/docs.json",
+ *   format: "json"
+ * });
  * ```
- * 
- * -------------------
- * 
+ *
+ * ##### Example 2: in Markdown format
+ *
+ *
+ * ```js
+ * require("javadoc").generate({
+ *   include: ["** /*.js", "** /*.ts"],
+ *   exclude: ["** /node_modules/**", "** /bower_components/**"],
+ *   output: "README.md",
+ *   format: "markdown"
+ * });
+ * ```
+ *
  * 
  */
 module.exports = {
 		/**
+		 * 
+		 * 
+		 * 
+		 * #### 3.2. API reference
+		 * 
+		 * -------------------
+		 *
+		 * ### **`javadoc`**
+		 * 
+		 * @type *`{Object}`*
+		 * @description This object holds the whole API of this module, which has only 1 method.
+		 * 
+		 * @example 
+		 * 
+		 * ```js
+		 * var javadoc = require("javadoc");
+		 * ```
+		 * 
+		 * -------------------
+		 */
+
+		/**
 		 * ### **`javadoc.generate(options)`**
+		 * 
 		 * @type *`{Function}`*
 		 * @parameter `{Object} options`. By default, its value is:
 		 * 
@@ -66,17 +99,19 @@ module.exports = {
 		 * -------------------
 		 * 
 		 * 
-		 * 
 		 * #### 3.3. Special notes about Markdown format
+		 * 
 		 * 
 		 * As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments (`/**` ... `* /`),
 		 * we need to know a few things.
 		 * 
-		 * 	1. All the lines in the Javadoc comments must start with "*".
+		 * 	1. All the lines in the Javadoc comments must start with "*" (even the ones that embed code).
 		 * 
-		 *  2. 
+		 *  2. When the string "* /" (or any "*" + any space + "/") is found, take into account that the output will be the same, but removing 1 space. This way, we can scape the string that closes the comments (* /) by adding 1 more space.
 		 * 
+		 *  3. You can use directly any markup valid for Markdown inside the comments, and generate Markdown documentation directly with this tool, which was the main goal of it.
 		 * 
+		 *  4. Tip: you can take a look how this project generates the documentation (`~$ npm run docs`) to see how to document a project 
 		 * 
 		 */
 		generate: function generate(optionsArg) {
@@ -106,27 +141,47 @@ module.exports = {
 						const REGEX_JAVADOC_LINE_BEGINING = /\n[\t ]*\*[\t ]?/g;
 						const REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE = /^\@[a-zA-Z0-9\-\_\$]*/g;
 						const REGEX_SPACES_EXTREMES = /^[\t\n ]*|[\t\n ]*$/g;
-						const appendToLast = function(obj, prop, item, isNew = false) {
-								if (!obj[prop]) {
-										obj[prop] = [];
-								}
-								if (isNew || (obj[prop].length === 0)) {
-										obj[prop].push("");
-								}
-								obj[prop][obj[prop].length - 1] += item.replace(/^ /g, "").replace(/(\*)( )+(\/)/g, function(match) {
-										return match.substr(0, 1) + match.substr(1, match.length - 3) + match.substr(match.length - 1);
-								});
-						};
 						var javadocComments = text.match(REGEX_JAVADOC);
 						var javadocFileData = [];
 						if (javadocComments) {
 								javadocComments.forEach(function(javadocComment) {
 										var javadocCommentClean = "\n" + javadocComment.replace(REGEX_BEGINING_AND_ENDING, "");
 										var javadocLines = javadocCommentClean.split(REGEX_JAVADOC_LINE_BEGINING);
-										var javadocCommentData = {
-												default: []
+										var javadocCommentData = [];
+										var attributeMatch = "default";
+										var lastObject = {
+												name: "default",
+												text: ""
 										};
-										var currentAttribute = "default";
+										// __DBG__("JAVADOC", javadocLines);
+										javadocLines.forEach(function(javadocLine) {
+												var attrMatch = javadocLine.match(REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE);
+												var isNewMatch = (!!attrMatch);
+												if (isNewMatch) {
+														attributeMatch = attrMatch[0];
+												}
+												// __DBG__("Javadoc line:", isNewMatch, attributeMatch, javadocLine);
+												if (isNewMatch) {
+														javadocCommentData.push(lastObject);
+														lastObject = {
+																name: attributeMatch,
+																text: javadocLine.replace(REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE, "")
+																		.replace(/^ /g, "")
+																		.replace(/(\*)( )+(\/)/g, function(match) {
+																				return match.substr(0, 1) + match.substr(1, match.length - 3) + match.substr(match.length - 1);
+																		})
+														};
+
+												} else {
+														lastObject.text += "\n" + javadocLine
+																.replace(/^ /g, "")
+																.replace(/(\*)( )+(\/)/g, function(match) {
+																		return match.substr(0, 1) + match.substr(1, match.length - 3) + match.substr(match.length - 1);
+																});
+												}
+										});
+										javadocCommentData.push(lastObject);
+										/*
 										javadocLines.forEach(function(javadocLine) {
 												var attributeMatch = javadocLine.match(REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE);
 												if (attributeMatch) {
@@ -138,13 +193,25 @@ module.exports = {
 														appendToLast(javadocCommentData, currentAttribute, "\n" + javadocLine);
 												}
 										});
+										//*/
 										javadocFileData.push(javadocCommentData);
 								});
 						}
 						return javadocFileData;
 				};
 
+				function __DBG__(msg) {
+						/*
+						return;
+						var otherArgs = Array.prototype.slice.call(arguments);
+						otherArgs.shift();
+						console.log.apply(console, ["[DEBUGGING] " + msg].concat(otherArgs));
+						//*/
+				};
+
 				function __LOG__(msg) {
+						return;
+						/*
 						if (options.output === undefined) {
 								return;
 						}
@@ -157,6 +224,7 @@ module.exports = {
 						//else {
 						//		console.log.apply(console, ["[javadoc]", msg].concat(otherArgs));
 						//}
+						//*/
 				};
 
 				function formatData(docComments) {
@@ -171,19 +239,21 @@ module.exports = {
 										// data += `##### File: ${file}\n\n`;
 										var docCommentsFile = docComments[file];
 										for (var a = 0; a < docCommentsFile.length; a++) {
-												var comment = docCommentsFile[a];
-												var properties = Object.keys(comment);
-												for (var b = 0; b < properties.length; b++) {
-														var property = properties[b];
-														var prop = property.replace(/^\@/g, "");
-														if (prop.length) {
-																prop = prop[0].toUpperCase() + prop.substr(1);
-														}
-														var content = comment[property];
-														if (prop !== "Default") {
-																data += `**${prop}:**`;
-														}
-														data += ` ${content}\n\n`;
+												var commentData = docCommentsFile[a];
+												for (var b = 0; b < commentData.length; b++) {
+														(function(commentData) {
+																__DBG__("Comment data:", commentData[b]);
+																var name = commentData[b].name.replace(/^@/g, "");
+																var text = commentData[b].text;
+																if (name.length) {
+																		name = name[0].toUpperCase() + name.substr(1);
+																}
+																__DBG__("Name: " + name);
+																if (name !== "Default") {
+																		data += `**${name}:**`;
+																}
+																data += ` ${text}\n\n`;
+														})(commentData);
 												}
 												data += "\n\n";
 										}

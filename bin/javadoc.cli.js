@@ -2,16 +2,79 @@
 
 /**
  *
- * #### 3.1. CLI Reference
+ *
+ * ## 2. CLI usage
  *
  *
+ * #### 2.1. CLI examples
  *
  *
- * ### **`javadoc CLI`**
+ * *Note: if you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.*
+ *
  * 
- * If you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
+ * ##### Example 1: in JSON format
+ *
+ * ```bash
+ * ~$ javadoc 
+ *     --include "** /*.js" "** /*.ts" 
+ *     --exclude "** /node_modules/**" "** /bower_components/**" 
+ *     --output "docs/docs.json" 
+ *     --format "json"
+ * ```
  * 
- * @help 
+ * Or the same:
+ * 
+ * ```bash
+ * ~$ javadoc 
+ *     -i "** /*.js" "** /*.ts" 
+ *     -e "** /node_modules/**" "** /bower_components/**" 
+ *     -o "docs/docs.json" 
+ *     -f "json"
+ * ```
+ *
+ * The above examples will:
+ * 
+ * - Include any JavaScript and TypeScript files found under our current directory.
+ *
+ * - Exclude the NPM and Bower modules typical folders.
+ *
+ * - Format the results into a JSON file.
+ *
+ * - Create a file at `docs/docs.json` and dump into it the results. Take into account that if the folder is not created (and the same with all the middle folders we specify), the tool will create it for us too.
+ *
+ *
+ * ##### Example 2: in Markdown format
+ *
+ * If we wanted to have the same previous example, but to output a `README.md` Markdown file, we can (in one line):
+ *
+ * ```bash
+ * ~$ javadoc 
+ *     --include "** /*.js" "** /*.ts" 
+ *     --exclude "** /node_modules/**" "** /bower_components/**" 
+ *     --output "README.md" 
+ *     --format "markdown"
+ * ```
+ *
+ * ##### Example 3: output to console
+ *
+ * To output the results by console, you only need to omit the `--output` (or `-o`) parameter.
+ *
+ * `~$ javadoc`
+ * 
+ * Which would be the same as typing:
+ * 
+ * ```bash
+ * ~$ javadoc
+ *    --include "** /*.js"
+ *    --exclude "** /node_modules/**"
+ *    --format "json"
+ * ```
+ *
+ * Omitting the `output` parameter implies to print the results by console instead of dumping them into a file. 
+ *
+ *
+ * 
+ * #### 2.2. CLI reference
  * 
  * ```
  * Options:
@@ -22,13 +85,11 @@
  *  --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
  *  --output, -o   File to output the generated contents.                                      [string]
  * ```
- * 
- * 
- * 
- * 
+ *
+ *
  */
 const args = require("yargs")
-	.version("1.0.1")
+	.version("1.0.2")
 	.option("include", {
 		type: "array",
 		alias: "i",

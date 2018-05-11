@@ -19,9 +19,22 @@ To use the CLI anywhere, install it globally:
 `~$ npm install -g javadoc`
 
 
-## 2. Usage
 
-#### 2.1. Usage of the CLI:
+
+
+
+ 
+
+
+
+## 2. CLI usage
+
+
+#### 2.1. CLI examples
+
+
+*Note: if you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.*
+
 
 ##### Example 1: in JSON format
 
@@ -66,8 +79,6 @@ If we wanted to have the same previous example, but to output a `README.md` Mark
     --format "markdown"
 ```
 
-
-
 ##### Example 3: output to console
 
 To output the results by console, you only need to omit the `--output` (or `-o`) parameter.
@@ -86,12 +97,29 @@ Which would be the same as typing:
 Omitting the `output` parameter implies to print the results by console instead of dumping them into a file. 
 
 
-#### 2.2. Usage of the API:
 
-To use the API, you only can call the `generate(Object:options)` method, 
-and pass to it the same parameters we use in the CLI.
+#### 2.2. CLI reference
 
-These codes will reproduce the same behaviour of the previous (CLI) examples.
+```
+Options:
+ --help         Show help                                                                  [boolean]
+ --version      Show version number                                                        [boolean]
+ --include, -i  Include a new glob pattern (as input).               [array] [default: ["**/*.js"]]
+ --exclude, -e  Exclude a new glob pattern (as input). [array] [default: ["**/node_modules/**/*"]]
+ --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
+ --output, -o   File to output the generated contents.                                      [string]
+```
+
+
+
+
+
+ 
+
+## 3. API usage
+
+
+#### 3.1. API examples
 
 
 ##### Example 1: in JSON format
@@ -118,60 +146,30 @@ require("javadoc").generate({
 });
 ```
 
-## 3. Reference
-
-The `javadoc` tool is available as `CLI` and as `API`.
-
-
-
-
-
- 
-
-
-#### 3.1. CLI Reference
-
-
-
-
-### **`javadoc CLI`**
-
-If you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.
-
-
-**Help:** 
-
-```
-Options:
- --help         Show help                                                                  [boolean]
- --version      Show version number                                                        [boolean]
- --include, -i  Include a new glob pattern (as input).               [array] [default: ["**/*.js"]]
- --exclude, -e  Exclude a new glob pattern (as input). [array] [default: ["**/node_modules/**/*"]]
- --format, -f   Format of the output. Options: 'markdown' | 'json'.       [string] [default: "json"]
- --output, -o   File to output the generated contents.                                      [string]
-```
-
-
-
 
 
 
 
  
 
-#### 3.2. API Reference
 
 
 
+#### 3.2. API reference
 
 -------------------
 
 ### **`javadoc`**
 
 
-**Type:** *`{Object}`*
+**Type:** *`{Object}`*,*`{Function}`*
 
 **Description:** This object holds the whole API of this module, which has only 1 method.
+,This method will take the files we want to include, the files we want to exclude, the file into which dump the results, and the format we want for them (`'json'` or `'markdown'`). 
+Then, it will retrieve the files matched (included) and not excluded. 
+Then, it will retrieve the Javadoc comments found in them. 
+Then, it will format the results (as JSON or Markdown). 
+And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
 
 
 **Example:** 
@@ -182,15 +180,34 @@ var javadoc = require("javadoc");
 
 -------------------
 
-
-
-
-
- 
-
 ### **`javadoc.generate(options)`**
+,
 
-**Type:** *`{Function}`*
+```js
+javadoc.generate({
+   include: ["**/*.js"],
+   exclude: ["**node_modules**"],
+   output: undefined,
+   format: "json"
+});
+```
+-------------------
+
+
+#### 3.3. Special notes about Markdown format
+
+
+As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments (`/**` ... `*/`),
+we need to know a few things.
+
+	1. All the lines in the Javadoc comments must start with "*" (even the ones that embed code).
+
+ 2. When the string "*/" (or any "*" + any space + "/") is found, take into account that the output will be the same, but removing 1 space. This way, we can scape the string that closes the comments (*/) by adding 1 more space.
+
+ 3. You can use directly any markup valid for Markdown inside the comments, and generate Markdown documentation directly with this tool, which was the main goal of it.
+
+ 4. Tip: you can take a look how this project generates the documentation (`~$ npm run docs`) to see how to document a project 
+
 
 **Parameter:** `{Object} options`. By default, its value is:
 
@@ -215,39 +232,6 @@ If you set any value for any of these properties, that property will be override
 
 
 **Returns:** `{String}` Depending on the format, it will output a JSON or a Markdown text.
-
-**Description:** This method will take the files we want to include, the files we want to exclude, the file into which dump the results, and the format we want for them (`'json'` or `'markdown'`). 
-Then, it will retrieve the files matched (included) and not excluded. 
-Then, it will retrieve the Javadoc comments found in them. 
-Then, it will format the results (as JSON or Markdown). 
-And finally, it will write the results into the specified file (output), or if we do not specify the output, it will print the result by console.
-
-
-**Example:** 
-
-```js
-javadoc.generate({
-   include: ["**/*.js"],
-   exclude: ["**node_modules**"],
-   output: undefined,
-   format: "json"
-});
-```
--------------------
-
-
-
-#### 3.3. Special notes about Markdown format
-
-As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments (`/**` ... `*/`),
-we need to know a few things.
-
-	1. All the lines in the Javadoc comments must start with "*".
-
- 2. 
-
-
-
 
 
 
