@@ -3,16 +3,18 @@
 /**
  *
  *
- * ## 2. CLI usage
+ * ## 3. CLI usage
  *
  *
- * #### 2.1. CLI examples
+ * #### 3.1. CLI examples
  *
  *
- * *Note: if you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.*
+ * ***Note**: if you have installed the tool only locally (and not globaly), you can reproduce the examples changing `javadoc` by `node_modules/.bin/javadoc`.*
  *
  * 
  * ##### Example 1: in JSON format
+ *
+ * This example taskes all `*.js` and `*.ts` files under the current directory, excluding the ones found under the tipycal NPM and Bower modules folders, extracts the Javadoc comments as JSON and creates (if not exists already) the `docs` folder, and writes the results at `docs.json`:
  *
  * ```bash
  * ~$ javadoc 
@@ -31,16 +33,6 @@
  *     -o "docs/docs.json" 
  *     -f "json"
  * ```
- *
- * The above examples will:
- * 
- * - Include any JavaScript and TypeScript files found under our current directory.
- *
- * - Exclude the NPM and Bower modules typical folders.
- *
- * - Format the results into a JSON file.
- *
- * - Create a file at `docs/docs.json` and dump into it the results. Take into account that if the folder is not created (and the same with all the middle folders we specify), the tool will create it for us too.
  *
  *
  * ##### Example 2: in Markdown format
@@ -74,7 +66,7 @@
  *
  *
  * 
- * #### 2.2. CLI reference
+ * #### 3.2. CLI reference
  * 
  * ```
  * Options:

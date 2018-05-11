@@ -1,8 +1,8 @@
 /**
- * ## 3. API usage
+ * ## 4. API usage
  *
  * 
- * #### 3.1. API examples
+ * #### 4.1. API examples
  * 
  *
  * ##### Example 1: in JSON format
@@ -36,7 +36,7 @@ module.exports = {
 		 * 
 		 * 
 		 * 
-		 * #### 3.2. API reference
+		 * #### 4.2. API reference
 		 * 
 		 * -------------------
 		 *
@@ -58,7 +58,7 @@ module.exports = {
 		 * ### **`javadoc.generate(options)`**
 		 * 
 		 * @type *`{Function}`*
-		 * @parameter `{Object} options`. By default, its value is:
+		 * @parameter *`{Object} options`*. By default, its value is:
 		 * 
 		 * ```js
 		 * {
@@ -99,19 +99,26 @@ module.exports = {
 		 * -------------------
 		 * 
 		 * 
-		 * #### 3.3. Special notes about Markdown format
+		 * #### 4.3. Special notes about Markdown format
 		 * 
 		 * 
-		 * As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments (`/**` ... `* /`),
+		 * As the `--format markdown` option (in CLI or API) expects that we embed Markdwon code in JavaScript multiline comments * /&#42;&#42;* ... *&#42;/*,
 		 * we need to know a few things.
 		 * 
-		 * 	1. All the lines in the Javadoc comments must start with "*" (even the ones that embed code).
+		 *
+		 *  1. All the lines inside the Javadoc comments must start with *&#42;* (even the ones that embed code). Otherwise, they will not be considered.
+		 *
+		 *
+		 *  2. The first *&#42;* of each line of the Javadoc comment will be removed.
+		 *
+		 *
+		 *  3. When the format selected is *markdown*, the name of the parameters will be in printed in bold, capitalized and without the first *@*.
 		 * 
-		 *  2. When the string "* /" (or any "*" + any space + "/") is found, take into account that the output will be the same, but removing 1 space. This way, we can scape the string that closes the comments (* /) by adding 1 more space.
 		 * 
-		 *  3. You can use directly any markup valid for Markdown inside the comments, and generate Markdown documentation directly with this tool, which was the main goal of it.
-		 * 
-		 *  4. Tip: you can take a look how this project generates the documentation (`~$ npm run docs`) to see how to document a project 
+		 *  4. The *&#42;/* string can be commonly required, and it can be simulated puting a space in the middle: *&#42; /*. Consider also to use the HTML entity in order to escape special characters.
+		 *
+		 *
+		 *  5. Tip: you can take a look how this project generates the documentation (`~$ npm run docs`) to see how to document a project .
 		 * 
 		 */
 		generate: function generate(optionsArg) {
@@ -181,19 +188,6 @@ module.exports = {
 												}
 										});
 										javadocCommentData.push(lastObject);
-										/*
-										javadocLines.forEach(function(javadocLine) {
-												var attributeMatch = javadocLine.match(REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE);
-												if (attributeMatch) {
-														currentAttribute = attributeMatch[0];
-														appendToLast(javadocCommentData, currentAttribute, javadocLine.replace(REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE, ""), true);
-												} else if (javadocLine === "") {
-														appendToLast(javadocCommentData, currentAttribute, "\n" + javadocLine);
-												} else {
-														appendToLast(javadocCommentData, currentAttribute, "\n" + javadocLine);
-												}
-										});
-										//*/
 										javadocFileData.push(javadocCommentData);
 								});
 						}
@@ -210,8 +204,6 @@ module.exports = {
 				};
 
 				function __LOG__(msg) {
-						return;
-						/*
 						if (options.output === undefined) {
 								return;
 						}

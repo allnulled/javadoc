@@ -93,6 +93,50 @@
             }
         ]
     ],
+    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-7.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n\nDefault context for the current Javadoc comment.\nDefault context for the current Javadoc comment.\nDefault context for the current Javadoc comment.\n"
+            },
+            {
+                "name": "@name",
+                "text": "Some name\n"
+            },
+            {
+                "name": "@property",
+                "text": "Property name. Property explanation\n"
+            },
+            {
+                "name": "@class",
+                "text": "Class name.\n"
+            },
+            {
+                "name": "@method",
+                "text": "Method name.\n"
+            },
+            {
+                "name": "@description",
+                "text": "This is a description.\nAny tag can be multiline, not only description.\nTake into account that the order of them is respected when generating JSON or Markdown.\n"
+            },
+            {
+                "name": "@parameter",
+                "text": "Parameter one.\n"
+            },
+            {
+                "name": "@parameter",
+                "text": "Parameter two.\n"
+            },
+            {
+                "name": "@parameter",
+                "text": "Parameter three.\n"
+            },
+            {
+                "name": "@NewInventedTag",
+                "text": "This is a new invented tag. \nThe first letter is uppercased, but in Markdown output, all the tags will be capitalized.\n\n\n"
+            }
+        ]
+    ],
     "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample.js": [
         [
             {
