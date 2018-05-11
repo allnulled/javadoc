@@ -81,7 +81,7 @@
  *
  */
 const args = require("yargs")
-	.version("1.0.2")
+	.version("1.0.3")
 	.option("include", {
 		type: "array",
 		alias: "i",

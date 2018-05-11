@@ -21,7 +21,7 @@
  *
  * [Javadoc](https://en.wikipedia.org/wiki/Javadoc) is simply a way to document code from the comments of it, spliting the information in tags (**`@thisIsAnExampleOfTag`**).
  *
- * This tool understands that **any word** can be a tag (not only a set of them), and you can follow *camel-case*, *snake-case* (or, in fact, any letter, number, `_`, `-` or `$` will be a valid character) for them, and they will split the comment data into a new piece of data of that comment.
+ * This tool understands that **any word** can be a tag if starts with **@** at the begining of the (multiline) comment line (not only a set of specific, closed words), and you can follow *camel-case*, *snake-case* (or, in fact, any `letter`, `number`, `_`, `-` or `$` will be a valid character) for them, and they will split the comment data into a new piece of data of that comment.
  *
  * As we are using usually Markdown to document our projects, this tool is thought to embed Markdown code in the comments of our code. It can be JavaScript, Java, Python, C/C++,... or even plain text, it does not matter, the file will be parsed the same way, not considering the language or the format of the file.
  *
@@ -186,7 +186,7 @@
  *  - the other content is just markdown, and it is up to the developer what to show and how.
  *
  *
- * Finally, in any case, if you have another necessities or you want to manage the data extracted from the 
+ * Finally, in any case, if you have another needs or you want to manage the data extracted from the 
  * Javadoc comments in other ways, you can take the JSON output, and play with it. In the end, this is how 
  * the markdown code is generated.
  *
