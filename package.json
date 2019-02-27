@@ -22,7 +22,7 @@
   "devDependencies": {
     "assertivity": "1.0.3",
     "execute-command-sync": "1.0.2",
-    "nyc": "11.7.2",
+    "nyc": "^13.3.0",
     "rimraf": "2.6.2"
   },
   "directories": {

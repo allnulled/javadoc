@@ -29,24 +29,47 @@ The contents of a Javadoc unit can be split by parts.
 
 Each part is made by ` * @Name_of_the_part Contents of that part. It can take multiple lines.`.
 
-If no part is specified, the contents will be put in `@default`.
+If no part is specified, the contents will be put in `default` label (`@` omitted). When `--format markdown` is specified, .
 
 ### Example of Javadoc comment
+
+#### Input:
 
 ```
 /**
  * 
- * Information. This line will be put in @default label.
+ * Information. This line will be put in "default" label 
+ * In `--format markdown`, it will not have label.
+ * In `--format json`, it will be put in label `default` (notice that `@` is omitted).
  * 
  * @name someConstant
  * @type *{Number}*.
  * @First_Label Information. This can be *markdown* code.
  * @Second_Label Information.
+ * Multiple lines allowed.
  * @Third_Label More information.
  * 
  */
 const someConstant = 100;
+```
 
+#### Output (with the options: `--format markdown`):
+
+```
+Information. This line will be put in "default" label 
+In `--format markdown`, it will not have label.
+In `--format json`, it will be put in label `default` (notice that `@` is omitted).
+
+**Name:** someConstant
+
+**Type:** *{Number}*.
+
+**First Label:** Information. This can be *markdown* code.
+
+**Second Label:** Information.
+Multiple lines allowed.
+
+**Third Label:** More information.
 ```
 
 ## 3. Extract documentation
