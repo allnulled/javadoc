@@ -1,6 +1,6 @@
 {
   "name": "javadoc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tool to generate JSON or Markdown from Javadoc comments and using glob patterns, for CLI and API.",
   "main": "src/javadoc.js",
   "bin": {
