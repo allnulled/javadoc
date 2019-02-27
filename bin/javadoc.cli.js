@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const args = require("yargs")
-	.version("1.0.5")
+	.version("1.0.6")
 	.option("include", {
 		type: "array",
 		alias: "i",
