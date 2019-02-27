@@ -14,6 +14,9 @@ To use the CLI anywhere, install it globally:
 
 `~$ npm install -g javadoc`
 
+To see the help, run:
+
+`javadoc --help`
 
 ## 2. Specify Javadoc comments
 
