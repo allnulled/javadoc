@@ -137,6 +137,34 @@
             }
         ]
     ],
+    "/home/human/Escriptori/p/javadoc/test/examples/sample-8.js": [
+        [
+            {
+                "name": "default",
+                "text": "\n\n\nInformation. This line will be put in \"default\" label \nIn `--format markdown`, it will not have label.\nIn `--format json`, it will be put in label `default` (notice that `@` is omitted).\n"
+            },
+            {
+                "name": "@name",
+                "text": "someConstant"
+            },
+            {
+                "name": "@type",
+                "text": "*{Number}*."
+            },
+            {
+                "name": "@First Label",
+                "text": "Information. This can be *markdown* code."
+            },
+            {
+                "name": "@Second Label",
+                "text": "Information.\nMultiple lines allowed."
+            },
+            {
+                "name": "@Third Label",
+                "text": "More information.\n"
+            }
+        ]
+    ],
     "/home/human/Escriptori/p/javadoc/test/examples/sample.js": [
         [
             {
