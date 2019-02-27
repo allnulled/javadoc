@@ -31,7 +31,23 @@ Each part is made by ` * @Name_of_the_part Contents of that part. It can take mu
 
 If no part is specified, the contents will be put in `@default`.
 
+### Example of Javadoc comment
 
+```
+/**
+ * 
+ * Information. This line will be put in @default label.
+ * 
+ * @name someConstant
+ * @type *{Number}*.
+ * @First_Label Information. This can be *markdown* code.
+ * @Second_Label Information.
+ * @Third_Label More information.
+ * 
+ */
+const someConstant = 100;
+
+```
 
 ## 3. Extract documentation
 
@@ -49,12 +65,14 @@ Which would mean:
 
 The previous command, from the API, would be written like this:
 
-`require("javadoc").generate({
+```
+require("javadoc").generate({
    include: ["1.js", "2.js", "3.js"],
   exclude: ["2.js"],
   format: "markdown",
   output: "out.md"
-});`
+});
+```
 
 ### Other considerations
 
