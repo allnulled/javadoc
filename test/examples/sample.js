@@ -37,4 +37,8 @@
  * 
  * But multiline too.
  * 
+ * 
+ * @Multiple_words_separated_by_spaces_are_allowed_too Separate words with "_" to create labels with spaces.
+ * 
+ * 
  */

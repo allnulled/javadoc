@@ -57,5 +57,10 @@ But multiline too.
 
 
 
+**Multiple words separated by spaces are allowed too:** Separate words with "_" to create labels with spaces.
+
+
+
+
 
 

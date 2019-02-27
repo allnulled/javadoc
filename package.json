@@ -9,13 +9,13 @@
   "scripts": {
     "gitupload": "gitanoaddfiles bin/javadoc.cli.js  docs/README.* package* README.md  src/javadoc.js  test/* test/examples/* && gitanopush",
     "test": "node test/javadoc.spec.js",
-    "coverage": "node_modules/.bin/rimraf coverage .nyc_output && node_modules/.bin/nyc --reporter=html node test/javadoc.spec.js",
-    "docs": "node bin/javadoc.cli.js -i \"docs/README.ini.md\" \"bin/javadoc.cli.js\" \"src/javadoc.js\" \"docs/README.end.md\" -f markdown -o README.md"
+    "coverage": "node_modules/.bin/rimraf coverage .nyc_output && node_modules/.bin/nyc --reporter=html node test/javadoc.spec.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "globule": "1.2.0",
+    "lodash": "^4.17.11",
     "mkdirp": "0.5.1",
     "yargs": "11.0.0"
   },

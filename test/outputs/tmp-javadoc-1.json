@@ -1,5 +1,5 @@
 {
-    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-1.js": [
+    "/home/human/Escriptori/p/javadoc/test/examples/sample-1.js": [
         [
             {
                 "name": "default",
@@ -57,7 +57,7 @@
             }
         ]
     ],
-    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-2.js": [
+    "/home/human/Escriptori/p/javadoc/test/examples/sample-2.js": [
         [
             {
                 "name": "default",
@@ -65,7 +65,7 @@
             }
         ]
     ],
-    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-3.js": [
+    "/home/human/Escriptori/p/javadoc/test/examples/sample-3.js": [
         [
             {
                 "name": "default",
@@ -81,7 +81,7 @@
             }
         ]
     ],
-    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-4.js": [
+    "/home/human/Escriptori/p/javadoc/test/examples/sample-4.js": [
         [
             {
                 "name": "default",
@@ -93,7 +93,7 @@
             }
         ]
     ],
-    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample-7.js": [
+    "/home/human/Escriptori/p/javadoc/test/examples/sample-7.js": [
         [
             {
                 "name": "default",
@@ -137,7 +137,7 @@
             }
         ]
     ],
-    "/home/human/Escriptori/too/Lenguajes2/javadoc/test/examples/sample.js": [
+    "/home/human/Escriptori/p/javadoc/test/examples/sample.js": [
         [
             {
                 "name": "default",
@@ -207,7 +207,11 @@
             },
             {
                 "name": "@description",
-                "text": "Something else\n\nBut multiline too.\n"
+                "text": "Something else\n\nBut multiline too.\n\n"
+            },
+            {
+                "name": "@Multiple words separated by spaces are allowed too",
+                "text": "Separate words with \"_\" to create labels with spaces.\n\n"
             }
         ]
     ]

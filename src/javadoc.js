@@ -146,7 +146,7 @@ module.exports = {
 						const REGEX_JAVADOC = /\/\*\*[^\n]*\n([\t ]*\*[\t ]*[^\n]*\n)+[\t ]*\*\//g;
 						const REGEX_BEGINING_AND_ENDING = /^\/\*\*[\t ]*\n|\n[\t ]*\*+\/$/g;
 						const REGEX_JAVADOC_LINE_BEGINING = /\n[\t ]*\*[\t ]?/g;
-						const REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE = /^\@[a-zA-Z0-9\-\_\$]*/g;
+						const REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE = /^\@[^\n\t\r ]*/g;
 						const REGEX_SPACES_EXTREMES = /^[\t\n ]*|[\t\n ]*$/g;
 						var javadocComments = text.match(REGEX_JAVADOC);
 						var javadocFileData = [];
@@ -165,7 +165,7 @@ module.exports = {
 												var attrMatch = javadocLine.match(REGEX_JAVADOC_LINE_BEGINING_ATTRIBUTE);
 												var isNewMatch = (!!attrMatch);
 												if (isNewMatch) {
-														attributeMatch = attrMatch[0];
+														attributeMatch = attrMatch[0].replace(/_/g, " ");
 												}
 												// __DBG__("Javadoc line:", isNewMatch, attributeMatch, javadocLine);
 												if (isNewMatch) {
