@@ -107,7 +107,7 @@ To add the symbols `*/` inside our Javadoc comments, simply write `* /` instead,
 
 ## 4. Conclusion
 
-Tons of tools for documenting software... this is a simple script that takes only 300 lines and uses regular expressions, which means that this tool does not parse any specific programming language, but it works for any kind of document or file.
+Tons of tools for documenting software... this is a simple script that takes less than 200 lines and uses regular expressions, which means that this tool does not parse any specific programming language, but it works for any kind of document or file.
 
 This is Javadoc, but in a wide sense.
 
