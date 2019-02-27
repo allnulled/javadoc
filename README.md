@@ -78,7 +78,7 @@ Multiple lines allowed.
 
 Once installed globally, you can run from your terminal:
 
-`~$ javadoc -i file1 file2 file3 -o output-file.md -f markdown -e file2`
+`~$ javadoc -i 1.js 2.js 3.js -o out.md -f markdown -e 2.js`
 
 Which would mean:
 
@@ -90,7 +90,7 @@ The previous command, from the API, would be written like this:
 
 ```
 require("javadoc").generate({
-   include: ["1.js", "2.js", "3.js"],
+  include: ["1.js", "2.js", "3.js"],
   exclude: ["2.js"],
   format: "markdown",
   output: "out.md"
