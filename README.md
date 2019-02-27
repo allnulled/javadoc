@@ -103,6 +103,17 @@ Consider to omit the `exclude` and `format` option.
 
 The default value of `format` option is `json`, not `markdown`.
 
+By default, the values of each option are:
+
+```
+{
+	include: ["**/*.js"],
+	exclude: ["**/node_modules/**/*"],
+	output: undefined,
+	format: "json"
+}
+```
+
 To add the symbols `*/` inside our Javadoc comments, simply write `* /` instead, and this will be translated to `*/` automatically.
 
 ## 4. Conclusion
