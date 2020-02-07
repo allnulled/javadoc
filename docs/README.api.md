@@ -60,7 +60,9 @@
 - `exclude:Array<String>`. Defaults to `["**/node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
 
 
-- `format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
+- `format:String`. Defaults to `"markdown"`. Allowed values:
+- `"md"`
+- `"json"`
 
 
 - `output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.

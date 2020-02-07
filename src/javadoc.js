@@ -61,7 +61,9 @@ class Javadoc {
      * @property 
      * @property - `include:Array<String>`. Defaults to `["** /*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
      * @property - `exclude:Array<String>`. Defaults to `["** /node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
-     * @property - `format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
+     * @property - `format:String`. Defaults to `"markdown"`. Allowed values:
+     *     - `"md"`
+     *     - `"json"`
      * @property - `output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.
      * @description General options of the `Javadoc.generate` main method.
      */
