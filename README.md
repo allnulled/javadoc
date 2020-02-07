@@ -47,11 +47,11 @@ These are some of the advantages of this tool compared to other tools:
 
 As simple as:
 
-`$ javadoc --include **/*.js **/*.ts --exclude **/node_modules/** --format markdown --output README.md`
+`$ javadoc --include "**/*.js" "**/*.ts" --exclude "**/node_modules/**" "**ignore**" --format markdown --output README.md`
 
 Or abbreviatedly:
 
-`$ javadoc -i **/*.php **/*.sql -e **/node_modules/** -f json -o README.md`
+`$ javadoc -i "**/*.php" "**/*.sql" -e "**/node_modules/**" "**ignore**" -f json -o README.md`
 
 Type `javadoc` to see the help.
 
