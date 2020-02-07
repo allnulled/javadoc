@@ -1,6 +1,6 @@
 # javadoc
 
-Documentation from javadoc comments: using glob patterns, for any language, with any tags, to JSON or Markdown format, from CLI or API.
+Unopinionated, simple and powerful documentation generator.
 
 ## Installation
 
