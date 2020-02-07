@@ -131,16 +131,16 @@ Here you will find the whole API available for programmatic usage, documented.
 **Property**: 
 
 
-`include:Array<String>`. Defaults to `["**/*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
+- `include:Array<String>`. Defaults to `["**/*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
 
 
-`exclude:Array<String>`. Defaults to `["**/node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
+- `exclude:Array<String>`. Defaults to `["**/node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
 
 
-`format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
+- `format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
 
 
-`output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.
+- `output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.
 
 
 **Description**: General options of the `Javadoc.generate` main method.
@@ -158,13 +158,13 @@ Here you will find the whole API available for programmatic usage, documented.
 **Parameter**: 
 
 
-`parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
+- `parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
 
 
-`parameterExcludes:Array<String>`. Replaces `DEFAULT_OPTIONS.exclude` as value.
+- `parameterExcludes:Array<String>`. Replaces `DEFAULT_OPTIONS.exclude` as value.
 
 
-`parameterOptions:Object`. Overrides `DEFAULT_GLOB_OPTIONS` as object.
+- `parameterOptions:Object`. Overrides `DEFAULT_GLOB_OPTIONS` as object.
 
 
 **Returns**: files:Promise<Array<String>>. Asynchronously, returns an array of matched files (as Strings).
