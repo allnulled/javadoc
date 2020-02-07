@@ -41,8 +41,8 @@ class Javadoc {
      * ### `Javadoc.DEFAULT_GLOB_OPTIONS`
      * @type *Static property. Object.*
      * @property 
-     * @property `cwd`. Defaults to `process.cwd()`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
-     * @property `dot`. Defaults to `true`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
+     * @property - `cwd`. Defaults to `process.cwd()`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
+     * @property - `dot`. Defaults to `true`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
      * @description Default options used by the `glob` package.
      */
     static get DEFAULT_GLOB_OPTIONS() {

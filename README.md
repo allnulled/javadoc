@@ -110,10 +110,10 @@ Here you will find the whole API available for programmatic usage, documented.
 **Property**:  
 
 
- `cwd`. Defaults to `process.cwd()`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
+ - `cwd`. Defaults to `process.cwd()`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
 
 
- `dot`. Defaults to `true`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
+ - `dot`. Defaults to `true`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
 
 
 **Description**:  Default options used by the `glob` package.
