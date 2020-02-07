@@ -47,13 +47,25 @@ These are some of the advantages of this tool compared to other tools:
 
 As simple as:
 
-`$ javadoc --include "**/*.js" "**/*.ts" --exclude "**/node_modules/**" "**ignore**" --format markdown --output README.md`
+```sh 
+$ javadoc
+  --include "**/*.js" "**/*.ts"
+  --exclude "**/node_modules/**" "**ignore**"
+  --format markdown
+  --output README.md
+```
 
 Or abbreviatedly:
 
-`$ javadoc -i "**/*.php" "**/*.sql" -e "**/node_modules/**" "**ignore**" -f json -o README.md`
+```sh
+$ javadoc
+  -i "**/*.php" "**/*.sql"
+  -e "**/node_modules/**" "**ignore**"
+  -f json
+  -o README.md
+```
 
-Type `javadoc` to see the help.
+Type `javadoc --help` to see the help.
 
 ## API usage
 
@@ -73,6 +85,8 @@ require("javadoc").generate({
 ## API reference
 
 Here you will find the whole API available for programmatic usage, documented.
+
+*Note: the main interesting method is `Javadoc.generate`, which is the one called by the **CLI**.*
 
 
 -----------------
