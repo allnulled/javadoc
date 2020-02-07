@@ -1,6 +1,0 @@
-/**
- *
- * @Something Ok
- * @SomethingElse Ok
- *
- */

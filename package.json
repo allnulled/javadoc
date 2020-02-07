@@ -1,29 +1,37 @@
 {
   "name": "javadoc",
-  "version": "1.0.6",
-  "description": "Tool to generate JSON or Markdown from Javadoc comments and using glob patterns, for CLI and API.",
-  "main": "src/javadoc.js",
+  "version": "2.0.0",
+  "description": "Documentation from javadoc comments: using glob patterns, for any language, with any tags, to JSON or Markdown format, from CLI or API.",
   "bin": {
-    "javadoc": "bin/javadoc.cli.js"
+    "javadoc": "bin/javadoc"
   },
+  "main": "src/javadoc.js",
   "scripts": {
-    "gitupload": "gitanoaddfiles bin/javadoc.cli.js  docs/README.* package* README.md  src/javadoc.js  test/* test/examples/* && gitanopush",
-    "test": "node test/javadoc.spec.js",
-    "coverage": "node_modules/.bin/rimraf coverage .nyc_output && node_modules/.bin/nyc --reporter=html node test/javadoc.spec.js"
+    "clean:modules": "rimraf node_modules",
+    "clean:coverage": "rimraf coverage .nyc_output",
+    "docs": "javadoc -i src/javadoc.js -o docs/README.api.md -f markdown && concat docs/README.ini.md docs/README.api.md docs/README.end.md -o README.md",
+    "test": "mocha test/*.test.js",
+    "cover": "npm run clean:coverage && nyc --reporter=html mocha test/*.test.js"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "javadoc",
+    "documentation",
+    "comments",
+    "generator"
+  ],
+  "author": "allnulled",
+  "license": "WTFPL",
   "dependencies": {
-    "globule": "1.2.0",
-    "lodash": "^4.17.11",
-    "mkdirp": "0.5.1",
-    "yargs": "11.0.0"
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "yargs": "^15.1.0"
   },
   "devDependencies": {
-    "assertivity": "1.0.3",
-    "execute-command-sync": "1.0.2",
-    "nyc": "^13.3.0",
-    "rimraf": "2.6.2"
+    "chai": "^4.2.0",
+    "concat": "^1.0.3",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "rimraf": "^3.0.1"
   },
   "directories": {
     "doc": "docs",
@@ -33,21 +41,6 @@
     "type": "git",
     "url": "git+https://github.com/allnulled/javadoc.git"
   },
-  "keywords": [
-    "javadoc",
-    "json",
-    "markdown",
-    "glob",
-    "cli",
-    "api",
-    "documentation",
-    "comment",
-    "comments",
-    "generate",
-    "reference",
-    "document",
-    "tags"
-  ],
   "bugs": {
     "url": "https://github.com/allnulled/javadoc/issues"
   },

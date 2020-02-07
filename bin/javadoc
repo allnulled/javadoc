@@ -1,33 +1,33 @@
 #! /usr/bin/env node
 
 const args = require("yargs")
-	.version("1.0.6")
+	.version("1.0.7")
 	.option("include", {
 		type: "array",
 		alias: "i",
 		default: ["**/*.js"],
-		describe: "Include a new glob pattern (as input).",
+		describe: "Include (glob) file patterns.",
 		help: "help"
 	})
 	.option("exclude", {
 		type: "array",
 		alias: "e",
 		default: ["**/node_modules/**/*"],
-		describe: "Exclude a new glob pattern (as input).",
+		describe: "Exclude (glob) file patterns.",
 		help: "help"
 	})
 	.option("format", {
 		type: "string",
 		alias: "f",
 		default: "json",
-		describe: "Format of the output. Options: 'markdown' | 'json'.",
+		describe: "Format of the output: 'md' or 'json'.",
 		help: "help"
 	})
 	.option("output", {
 		type: "string",
 		alias: "o",
 		demmandOption: true,
-		describe: "File to output the generated contents.",
+		describe: "Output file.",
 		help: "help"
 	}).argv;
 
