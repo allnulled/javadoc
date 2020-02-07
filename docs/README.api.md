@@ -1,8 +1,6 @@
 -----------------
 
-
-
-**Name**: Javadoc
+### `Javadoc`
 
 
 **Type**: *Class. Function.*
@@ -14,9 +12,7 @@
 
 -------------------
 
-
-
-**Name**: Javadoc.REGEX_PATTERNS
+### `Javadoc.REGEX_PATTERNS`
 
 
 **Type**: *Static property. Object.*
@@ -28,9 +24,7 @@
 
 -------------------------
 
-
-
-**Name**: Javadoc.DEFAULT_GLOB_OPTIONS
+### `Javadoc.DEFAULT_GLOB_OPTIONS`
 
 
 **Type**: *Static property. Object.*
@@ -51,9 +45,7 @@
 
 ---------------------------
 
-
-
-**Name**: Javadoc.DEFAULT_OPTIONS
+### `Javadoc.DEFAULT_OPTIONS`
 
 
 **Type**: *Static property. Object.*
@@ -80,9 +72,7 @@
 
 ------------------------
 
-
-
-**Name**: Javadoc.findFiles
+### `Javadoc.findFiles`
 
 
 **Type**: Static method. Function.
@@ -109,9 +99,7 @@
 
 -------------------------------
 
-
-
-**Name**: Javadoc.findCommentsInFile
+### `Javadoc.findCommentsInFile`
 
 
 **Type**: *Static method. Function.*
@@ -129,9 +117,7 @@
 
 --------------------------------
 
-
-
-**Name**: Javadoc.findCommentsInString
+### `Javadoc.findCommentsInString`
 
 
 **Type**: *Static method. Function.*
@@ -149,9 +135,7 @@
 
 -----------------------------------
 
-
-
-**Name**: Javadoc.formatJsonToMarkdown
+### `Javadoc.formatJsonToMarkdown`
 
 
 **Type**: *Static method. Function.*
@@ -169,9 +153,7 @@
 
 -----------------------------------
 
-
-
-**Name**: Javadoc.generate
+### `Javadoc.generate`
 
 
 **Type**: *Static method. Function.*

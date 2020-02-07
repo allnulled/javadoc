@@ -77,9 +77,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 -----------------
 
-
-
-**Name**: Javadoc
+### `Javadoc`
 
 
 **Type**: *Class. Function.*
@@ -91,9 +89,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 -------------------
 
-
-
-**Name**: Javadoc.REGEX_PATTERNS
+### `Javadoc.REGEX_PATTERNS`
 
 
 **Type**: *Static property. Object.*
@@ -105,9 +101,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 -------------------------
 
-
-
-**Name**: Javadoc.DEFAULT_GLOB_OPTIONS
+### `Javadoc.DEFAULT_GLOB_OPTIONS`
 
 
 **Type**: *Static property. Object.*
@@ -128,9 +122,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 ---------------------------
 
-
-
-**Name**: Javadoc.DEFAULT_OPTIONS
+### `Javadoc.DEFAULT_OPTIONS`
 
 
 **Type**: *Static property. Object.*
@@ -157,9 +149,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 ------------------------
 
-
-
-**Name**: Javadoc.findFiles
+### `Javadoc.findFiles`
 
 
 **Type**: Static method. Function.
@@ -186,9 +176,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 -------------------------------
 
-
-
-**Name**: Javadoc.findCommentsInFile
+### `Javadoc.findCommentsInFile`
 
 
 **Type**: *Static method. Function.*
@@ -206,9 +194,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 --------------------------------
 
-
-
-**Name**: Javadoc.findCommentsInString
+### `Javadoc.findCommentsInString`
 
 
 **Type**: *Static method. Function.*
@@ -226,9 +212,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 -----------------------------------
 
-
-
-**Name**: Javadoc.formatJsonToMarkdown
+### `Javadoc.formatJsonToMarkdown`
 
 
 **Type**: *Static method. Function.*
@@ -246,9 +230,7 @@ Here you will find the whole API available for programmatic usage, documented.
 
 -----------------------------------
 
-
-
-**Name**: Javadoc.generate
+### `Javadoc.generate`
 
 
 **Type**: *Static method. Function.*
