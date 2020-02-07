@@ -201,7 +201,7 @@ class Javadoc {
                 // 7. Remove the property.
                 token = token.replace(JAVADOC_PROPERTY, "");
                 // 8. Get the current value. Also, replace "* /" for "*/" (in order to escape closed comments).
-                const value = token.match(JAVADOC_VALUE)[0].replace(/^[\t ]+/g, "").replace(/\* \//g, "*/");
+                const value = token.match(JAVADOC_VALUE)[0].replace(/\* \//g, "*/");
                 // 9. If it is the last line of the javadoc, get out of the extraction of that javadoc-comment.
                 if (value === "/") {
                     continue Extraction;
