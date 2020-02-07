@@ -10,7 +10,7 @@ const capitalizeString = (s) => {
 /**
  * -----------------
  * 
- * @name Javadoc
+ * ### `Javadoc`
  * @type *Class. Function.*
  * @description Master class of the `javadoc` package.
  */
@@ -20,7 +20,7 @@ class Javadoc {
      * 
      * -------------------
      * 
-     * @name Javadoc.REGEX_PATTERNS
+     * ### `Javadoc.REGEX_PATTERNS`
      * @type *Static property. Object.*
      * @description Regular expression patterns used by the class.
      */
@@ -38,7 +38,7 @@ class Javadoc {
      * 
      * -------------------------
      * 
-     * @name Javadoc.DEFAULT_GLOB_OPTIONS
+     * ### `Javadoc.DEFAULT_GLOB_OPTIONS`
      * @type *Static property. Object.*
      * @property 
      * @property `cwd`. Defaults to `process.cwd()`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
@@ -56,7 +56,7 @@ class Javadoc {
      * 
      * ---------------------------
      * 
-     * @name Javadoc.DEFAULT_OPTIONS
+     * ### `Javadoc.DEFAULT_OPTIONS`
      * @type *Static property. Object.*
      * @property 
      * @property `include:Array<String>`. Defaults to `["** /*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
@@ -78,7 +78,7 @@ class Javadoc {
      * 
      * ------------------------
      * 
-     * @name Javadoc.findFiles
+     * ### `Javadoc.findFiles`
      * @type Static method. Function.
      * @parameter 
      * @parameter `parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
@@ -138,7 +138,7 @@ class Javadoc {
      * 
      * -------------------------------
      * 
-     * @name Javadoc.findCommentsInFile
+     * ### `Javadoc.findCommentsInFile`
      * @type *Static method. Function.*
      * @parameter `file:String`. File into which look for the javadoc-comments.
      * @returns `matches:Promise<Array<Object>>`. Asynchronously, returns a list of matched javadoc-comments (as Objects) found in the passed file.
@@ -160,7 +160,7 @@ class Javadoc {
      * 
      * --------------------------------
      * 
-     * @name Javadoc.findCommentsInString
+     * ### `Javadoc.findCommentsInString`
      * @type *Static method. Function.*
      * @parameter `text:String`. Text into which look for the javadoc-comments.
      * @returns `totalMatches:Array<Object>`. List of javadoc-comments (as Objects) found in the passed String.
@@ -233,7 +233,7 @@ class Javadoc {
      * 
      * -----------------------------------
      * 
-     * @name Javadoc.formatJsonToMarkdown
+     * ### `Javadoc.formatJsonToMarkdown`
      * @type *Static method. Function.*
      * @parameter `fileComments:Array<Object>`. List of javadoc-comments (as Object) to convert to markdown format.
      * @returns `formatted:String`. Markdown code from passed javadoc-comments.
@@ -268,7 +268,7 @@ class Javadoc {
      * 
      * -----------------------------------
      * 
-     * @name Javadoc.generate
+     * ### `Javadoc.generate`
      * @type *Static method. Function.*
      * @parameter `parameters:Object`. Overrides `Javadoc.DEFAULT_OPTIONS` as Object. To see more about properties, go to that static property of Javadoc class.
      * @returns `output:Promise<String|Array<Object>>`. Depending on `parameters.format` (`"json"`|`"markdown"`), it can return an Array or a String.
