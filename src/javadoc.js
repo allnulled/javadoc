@@ -27,8 +27,8 @@ class Javadoc {
     static get REGEX_PATTERNS() {
         return {
             JAVADOC_COMMENT: /\/\*\*[\t ]*((\r?\n)([\t ]*\*[\t ]*).*)*/g,
-            JAVADOC_ENTRY: /^\/\*\*[\t ]*/g,
-            JAVADOC_LINE_ENTRY: /^\r?\n[\t ]*\*[\t ]*/g,
+            JAVADOC_ENTRY: /^\/\*\*[\t ]/g,
+            JAVADOC_LINE_ENTRY: /^\r?\n[\t ]*\*[\t ]/g,
             JAVADOC_PROPERTY: /^\@[^\n\r\t ]*/g,
             JAVADOC_VALUE: /^.*/g,
         }
@@ -215,7 +215,7 @@ class Javadoc {
                 // 12. Add the value to that property.
                 if ((!isPropertyLine) && wasStarted) {
                     // a. Inline if it is a new-property-line
-                    matches[property][matches[property].length - 1] += "\n" + value;
+                    matches[property][matches[property].length - 1] += EOL + value;
                 } else {
                     // b. Otherwise as a new entry
                     matches[property].push(value);
