@@ -11,8 +11,7 @@ const capitalizeString = (s) => {
  * -----------------
  * 
  * @name Javadoc
- * @type Class.
- * @type Function.
+ * @type *Class. Function.*
  * @description Master class of the `javadoc` package.
  */
 class Javadoc {
@@ -22,8 +21,7 @@ class Javadoc {
      * -------------------
      * 
      * @name Javadoc.REGEX_PATTERNS
-     * @type Static property.
-     * @type Object.
+     * @type *Static property. Object.*
      * @description Regular expression patterns used by the class.
      */
     static get REGEX_PATTERNS() {
@@ -41,8 +39,8 @@ class Javadoc {
      * -------------------------
      * 
      * @name Javadoc.DEFAULT_GLOB_OPTIONS
-     * @type Static property.
-     * @type Object.
+     * @type *Static property. Object.*
+     * @property 
      * @property `cwd`. Defaults to `process.cwd()`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
      * @property `dot`. Defaults to `true`. Allowed options at [glob package](https://www.npmjs.com/package/glob#options)
      * @description Default options used by the `glob` package.
@@ -59,12 +57,12 @@ class Javadoc {
      * ---------------------------
      * 
      * @name Javadoc.DEFAULT_OPTIONS
-     * @type Static property.
-     * @type Object.
-     * @property include:Array<String>. Defaults to `["** /*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
-     * @property exclude:Array<String>. Defaults to `["** /node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
-     * @property format:String. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
-     * @property output:String. Defaults to `undefined`. File into which dump the results. **Required value**.
+     * @type *Static property. Object.*
+     * @property 
+     * @property `include:Array<String>`. Defaults to `["** /*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
+     * @property `exclude:Array<String>`. Defaults to `["** /node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
+     * @property `format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
+     * @property `output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.
      * @description General options of the `Javadoc.generate` main method.
      */
     static get DEFAULT_OPTIONS() {
@@ -81,11 +79,11 @@ class Javadoc {
      * ------------------------
      * 
      * @name Javadoc.findFiles
-     * @type Static method.
-     * @type Function.
-     * @parameter parameterIncludes:Array<String>. Replaces `DEFAULT_OPTIONS.include` as value.
-     * @parameter parameterExcludes:Array<String>. Replaces `DEFAULT_OPTIONS.exclude` as value.
-     * @parameter parameterOptions:Object. Overrides `DEFAULT_GLOB_OPTIONS` as object.
+     * @type Static method. Function.
+     * @parameter 
+     * @parameter `parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
+     * @parameter `parameterExcludes:Array<String>`. Replaces `DEFAULT_OPTIONS.exclude` as value.
+     * @parameter `parameterOptions:Object`. Overrides `DEFAULT_GLOB_OPTIONS` as object.
      * @returns files:Promise<Array<String>>. Asynchronously, returns an array of matched files (as Strings).
      * @description Finds files based on glob patterns ([more info](https://www.npmjs.com/package/glob#usage)) included, excluded and glob options ([more info](https://www.npmjs.com/package/glob#options)).
      */
@@ -141,10 +139,9 @@ class Javadoc {
      * -------------------------------
      * 
      * @name Javadoc.findCommentsInFile
-     * @type Static method.
-     * @type Function.
-     * @parameter file:String. File into which look for the javadoc-comments.
-     * @returns matches:Promise<Array<Object>>. Asynchronously, returns a list of matched javadoc-comments (as Objects) found in the passed file.
+     * @type *Static method. Function.*
+     * @parameter `file:String`. File into which look for the javadoc-comments.
+     * @returns `matches:Promise<Array<Object>>`. Asynchronously, returns a list of matched javadoc-comments (as Objects) found in the passed file.
      * @description From a file, it returns (asynchronously, by a Promise) javadoc-comments represented as Objects.
      */
     static findCommentsInFile(file) {
@@ -164,10 +161,9 @@ class Javadoc {
      * --------------------------------
      * 
      * @name Javadoc.findCommentsInString
-     * @type Static method.
-     * @type Function.
-     * @parameter text:String. Text into which look for the javadoc-comments.
-     * @returns totalMatches:Array<Object>. List of javadoc-comments (as Objects) found in the passed String.
+     * @type *Static method. Function.*
+     * @parameter `text:String`. Text into which look for the javadoc-comments.
+     * @returns `totalMatches:Array<Object>`. List of javadoc-comments (as Objects) found in the passed String.
      * @description Finds javadoc-comments (as Objects) from a String.
      */
     static findCommentsInString(text) {
@@ -238,10 +234,9 @@ class Javadoc {
      * -----------------------------------
      * 
      * @name Javadoc.formatJsonToMarkdown
-     * @type Static method.
-     * @type Function.
-     * @parameter fileComments:Array<Object>. List of javadoc-comments (as Object) to convert to markdown format.
-     * @returns formatted:String. Markdown code from passed javadoc-comments.
+     * @type *Static method. Function.*
+     * @parameter `fileComments:Array<Object>`. List of javadoc-comments (as Object) to convert to markdown format.
+     * @returns `formatted:String`. Markdown code from passed javadoc-comments.
      * @description Generates `markdown` code from a list of javadoc-comments.
      */
     static formatJsonToMarkdown(filesAndComments) {
@@ -274,10 +269,9 @@ class Javadoc {
      * -----------------------------------
      * 
      * @name Javadoc.generate
-     * @type Static method.
-     * @type Function.
-     * @parameter parameters:Object. Overrides `Javadoc.DEFAULT_OPTIONS` as Object. To see more about properties, go to that static property of Javadoc class.
-     * @returns output:Promise<String|Array<Object>>. Depending on `parameters.format` (`"json"`|`"markdown"`), it can return an Array or a String.
+     * @type *Static method. Function.*
+     * @parameter `parameters:Object`. Overrides `Javadoc.DEFAULT_OPTIONS` as Object. To see more about properties, go to that static property of Javadoc class.
+     * @returns `output:Promise<String|Array<Object>>`. Depending on `parameters.format` (`"json"`|`"markdown"`), it can return an Array or a String.
      * @description Finds included files, dismisses excluded files, extracts javadoc-comments, formats them adecuately, and dumps the results into output file, while returning the output asynchronously (as a Promise).
      */
     static generate(parameters = {}) {
