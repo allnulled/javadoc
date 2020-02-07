@@ -75,7 +75,7 @@
 ### `Javadoc.findFiles`
 
 
-**Type**: Static method. Function.
+**Type**: *Static method. Function.*
 
 
 **Parameter**: 

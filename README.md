@@ -152,7 +152,7 @@ Here you will find the whole API available for programmatic usage, documented.
 ### `Javadoc.findFiles`
 
 
-**Type**: Static method. Function.
+**Type**: *Static method. Function.*
 
 
 **Parameter**: 

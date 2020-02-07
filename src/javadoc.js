@@ -79,7 +79,7 @@ class Javadoc {
      * ------------------------
      * 
      * ### `Javadoc.findFiles`
-     * @type Static method. Function.
+     * @type *Static method. Function.*
      * @parameter 
      * @parameter `parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
      * @parameter `parameterExcludes:Array<String>`. Replaces `DEFAULT_OPTIONS.exclude` as value.
