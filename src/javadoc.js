@@ -59,10 +59,10 @@ class Javadoc {
      * ### `Javadoc.DEFAULT_OPTIONS`
      * @type *Static property. Object.*
      * @property 
-     * @property `include:Array<String>`. Defaults to `["** /*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
-     * @property `exclude:Array<String>`. Defaults to `["** /node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
-     * @property `format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
-     * @property `output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.
+     * @property - `include:Array<String>`. Defaults to `["** /*.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
+     * @property - `exclude:Array<String>`. Defaults to `["** /node_modules/**.js"]`. Allowed rules at [glob package](https://www.npmjs.com/package/glob).
+     * @property - `format:String`. Defaults to `"markdown"`. Allowed values: `"md"` | `"json"`.
+     * @property - `output:String`. Defaults to `undefined`. File into which dump the results. **Required value**.
      * @description General options of the `Javadoc.generate` main method.
      */
     static get DEFAULT_OPTIONS() {
@@ -81,9 +81,9 @@ class Javadoc {
      * ### `Javadoc.findFiles`
      * @type *Static method. Function.*
      * @parameter 
-     * @parameter `parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
-     * @parameter `parameterExcludes:Array<String>`. Replaces `DEFAULT_OPTIONS.exclude` as value.
-     * @parameter `parameterOptions:Object`. Overrides `DEFAULT_GLOB_OPTIONS` as object.
+     * @parameter - `parameterIncludes:Array<String>`. Replaces `DEFAULT_OPTIONS.include` as value.
+     * @parameter - `parameterExcludes:Array<String>`. Replaces `DEFAULT_OPTIONS.exclude` as value.
+     * @parameter - `parameterOptions:Object`. Overrides `DEFAULT_GLOB_OPTIONS` as object.
      * @returns files:Promise<Array<String>>. Asynchronously, returns an array of matched files (as Strings).
      * @description Finds files based on glob patterns ([more info](https://www.npmjs.com/package/glob#usage)) included, excluded and glob options ([more info](https://www.npmjs.com/package/glob#options)).
      */
