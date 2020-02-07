@@ -27,9 +27,9 @@ class Javadoc {
     static get REGEX_PATTERNS() {
         return {
             JAVADOC_COMMENT: /\/\*\*[\t ]*((\r?\n)([\t ]*\*[\t ]*).*)*/g,
-            JAVADOC_ENTRY: /^\/\*\*[\t ]/g,
-            JAVADOC_LINE_ENTRY: /^\r?\n[\t ]*\*[\t ]/g,
-            JAVADOC_PROPERTY: /^\@[^\n\r\t ]*/g,
+            JAVADOC_ENTRY: /^\/\*\*[\t ]?/g,
+            JAVADOC_LINE_ENTRY: /^\r?\n[\t ]*\*[\t ]?/g,
+            JAVADOC_PROPERTY: /^[\t ]*\@[^\n\r\t ]*/g,
             JAVADOC_VALUE: /^.*/g,
         }
     }
