@@ -1,0 +1,3 @@
+\* @property[^\n]+(\n[ \t]+\* @property[^\n]+)+
+\* @parameter[^\n]+(\n[ \t]+\* @parameter[^\n]+)+
+\* @throws[^\n]+(\n[ \t]+\* @throws[^\n]+)+
