@@ -1,6 +1,6 @@
 {
   "name": "javadoc",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Unopinionated, simple and powerful documentation generator.",
   "bin": {
     "javadoc": "bin/javadoc"
