@@ -1,10 +1,10 @@
 const fs = require("fs-extra");
 const glob = require("glob");
 const path = require("path");
-const {EOL} = require("os");
+const { EOL } = require("os");
 
 const capitalizeString = (s) => {
-    return s.substr(0,1).toUpperCase() + s.substr(1);
+    return s.substr(0, 1).toUpperCase() + s.substr(1);
 };
 
 /**
@@ -111,22 +111,22 @@ class Javadoc {
             let counterIncluded = 0;
             const finalize = () => {
                 counterIncluded++;
-                if(counterIncluded >= includez.length) {
+                if (counterIncluded >= includez.length) {
                     return success(files);
                 }
             }
-            if(includez.length === 0) {
+            if (includez.length === 0) {
                 return finalize();
             }
-            for(let includeIndex = 0; includeIndex < includez.length; includeIndex++) {
+            for (let includeIndex = 0; includeIndex < includez.length; includeIndex++) {
                 const includePattern = includez[includeIndex];
                 glob(includePattern, options, (error, filesMatched) => {
                     if (error) {
                         return finalize();
                     }
-                    for(let indexMatched = 0; indexMatched < filesMatched.length; indexMatched++) {
+                    for (let indexMatched = 0; indexMatched < filesMatched.length; indexMatched++) {
                         const fileMatched = filesMatched[indexMatched];
-                        if(files.indexOf(fileMatched) === -1) {
+                        if (files.indexOf(fileMatched) === -1) {
                             files.push(fileMatched);
                         }
                     }
@@ -179,7 +179,7 @@ class Javadoc {
         } = this.REGEX_PATTERNS;
         // 1. Get all javadoc-comment matches.
         const allMatches = text.match(JAVADOC_COMMENT);
-        if(allMatches === null) {
+        if (allMatches === null) {
             return totalMatches;
         }
         // 2. For each javadoc-comment...
@@ -245,7 +245,7 @@ class Javadoc {
         let formatted = "";
         for (let indexFiles = 0; indexFiles < filesAndComments.length; indexFiles++) {
             const fileComments = filesAndComments[indexFiles];
-            for(let indexComments = 0; indexComments < fileComments.length; indexComments++) {
+            for (let indexComments = 0; indexComments < fileComments.length; indexComments++) {
                 const fileComment = fileComments[indexComments];
                 Object.keys(fileComment).forEach(property => {
                     const value = fileComment[property].join(EOL + EOL + EOL);
@@ -287,14 +287,14 @@ class Javadoc {
                     success: [],
                     error: []
                 };
-                if(files.length === 0) {
+                if (files.length === 0) {
                     return success([]);
                 }
                 const endExecution = (result) => {
                     console.log("[javadoc] Final javadoc report per file:");
                     console.log(`[javadoc]   - ${output.success.length} success(es).`);
                     console.log(`[javadoc]   - ${output.error.length} error(s).`);
-                    if(output.error.length === 0) {
+                    if (output.error.length === 0) {
                         console.log("[javadoc] Successfully finished.");
                     }
                     return success(result);
@@ -317,7 +317,7 @@ class Javadoc {
                             }
                             return endExecution(formatted);
                         } else {
-                            if(options.output) {
+                            if (options.output) {
                                 const outputFile = path.resolve(options.output);
                                 try {
                                     fs.outputFileSync(outputFile, JSON.stringify(output, null, 2), "utf8");
@@ -337,7 +337,15 @@ class Javadoc {
                     ((file) => {
                         return this.findCommentsInFile(file).then(comments => {
                             console.log(`[javadoc] File ${path.basename(file)} has ${comments.length} javadoc comments.`);
-                            output.success.push(comments);
+                            Agregar_fichero_en_nodo_de_comentario: {
+                                comments = comments.map(comment => {
+                                    comment.file = file;
+                                    return comment;
+                                })
+                            }
+                            if (comments.length) {
+                                output.success.push(comments);
+                            }
                             return finalize();
                         }).catch(error => {
                             console.log(`[javadoc] Error finding comments on file: ${path.basename(file)}.`);
